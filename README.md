@@ -1,7 +1,7 @@
 CodePath Final Projec: To Do List
 =============
 
-[Rick James!](https://github.com/sayheyrickjames), [](), and []() final project for CodePath is none other than a to-do list.
+[Rick James!](https://github.com/sayheyrickjames), [Rebecca Goldman](https://github.com/rebeccagoldman), and [Jeff Smith's](https://github.com/jeffpersonified) final project for CodePath is none other than a to-do list.
 
 We want to incorporate the accelerator, dynamic gestures, "organic" circles to reimagine what a to-do list can look like.
 
