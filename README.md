@@ -1,4 +1,4 @@
-CodePath Final Projec: To Do List
+CodePath Final Project: To-Do List
 =============
 
 [Rick James!](https://github.com/sayheyrickjames), [Rebecca Goldman](https://github.com/rebeccagoldman), and [Jeff Smith's](https://github.com/jeffpersonified) final project for CodePath is none other than a to-do list.
