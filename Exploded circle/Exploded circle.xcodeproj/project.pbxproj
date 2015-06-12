@@ -13,8 +13,8 @@
 		6B0E97021B2A1AB90010B73C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B0E97011B2A1AB90010B73C /* Images.xcassets */; };
 		6B0E97051B2A1AB90010B73C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0E97031B2A1AB90010B73C /* LaunchScreen.xib */; };
 		6B0E97111B2A1AB90010B73C /* Exploded_circleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E97101B2A1AB90010B73C /* Exploded_circleTests.swift */; };
-		6B0E971E1B2A5CB00010B73C /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B0E971D1B2A5CB00010B73C /* pop.wav */; };
-		6B0E97201B2A61790010B73C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E971F1B2A61790010B73C /* Common.swift */; };
+		6B0E97221B2A8E520010B73C /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E97211B2A8E520010B73C /* Common.swift */; };
+		6B0E97241B2A8E5B0010B73C /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B0E97231B2A8E5B0010B73C /* pop.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		6B0E970A1B2A1AB90010B73C /* Exploded circleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Exploded circleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0E970F1B2A1AB90010B73C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B0E97101B2A1AB90010B73C /* Exploded_circleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exploded_circleTests.swift; sourceTree = "<group>"; };
-		6B0E971D1B2A5CB00010B73C /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pop.wav; path = ../../../Downloads/pop.wav; sourceTree = "<group>"; };
-		6B0E971F1B2A61790010B73C /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = ../../../Downloads/Common.swift; sourceTree = "<group>"; };
+		6B0E97211B2A8E520010B73C /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = ../../../../Downloads/Common.swift; sourceTree = "<group>"; };
+		6B0E97231B2A8E5B0010B73C /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pop.wav; path = ../../../../Downloads/pop.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +85,9 @@
 				6B0E96FC1B2A1AB90010B73C /* ViewController.swift */,
 				6B0E96FE1B2A1AB90010B73C /* Main.storyboard */,
 				6B0E97011B2A1AB90010B73C /* Images.xcassets */,
-				6B0E971D1B2A5CB00010B73C /* pop.wav */,
+				6B0E97231B2A8E5B0010B73C /* pop.wav */,
 				6B0E97031B2A1AB90010B73C /* LaunchScreen.xib */,
-				6B0E971F1B2A61790010B73C /* Common.swift */,
+				6B0E97211B2A8E520010B73C /* Common.swift */,
 				6B0E96F81B2A1AB90010B73C /* Supporting Files */,
 			);
 			path = "Exploded circle";
@@ -199,7 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B0E97001B2A1AB90010B73C /* Main.storyboard in Resources */,
-				6B0E971E1B2A5CB00010B73C /* pop.wav in Resources */,
+				6B0E97241B2A8E5B0010B73C /* pop.wav in Resources */,
 				6B0E97051B2A1AB90010B73C /* LaunchScreen.xib in Resources */,
 				6B0E97021B2A1AB90010B73C /* Images.xcassets in Resources */,
 			);
@@ -219,8 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0E97221B2A8E520010B73C /* Common.swift in Sources */,
 				6B0E96FD1B2A1AB90010B73C /* ViewController.swift in Sources */,
-				6B0E97201B2A61790010B73C /* Common.swift in Sources */,
 				6B0E96FB1B2A1AB90010B73C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
