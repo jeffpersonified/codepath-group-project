@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Exploded_circle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IuE-PU-ej1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lrw-YQ-h4u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="o2x-2R-x5f">
+                                <rect key="frame" x="37" y="139" width="246" height="246"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="circle-exploded-1" translatesAutoresizingMaskIntoConstraints="NO" id="K2Z-xZ-bT5">
+                                <rect key="frame" x="-42" y="61" width="425" height="445"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o2x-2R-x5f" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="19" id="48c-hc-AdY"/>
+                            <constraint firstItem="Lrw-YQ-h4u" firstAttribute="top" secondItem="K2Z-xZ-bT5" secondAttribute="bottom" constant="62" id="7cM-Yb-klV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K2Z-xZ-bT5" secondAttribute="trailing" constant="-79" id="AIk-qM-8w4"/>
+                            <constraint firstItem="K2Z-xZ-bT5" firstAttribute="top" secondItem="IuE-PU-ej1" secondAttribute="bottom" constant="41" id="Su5-Fn-EaW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o2x-2R-x5f" secondAttribute="trailing" constant="23" id="Td6-UJ-LWr"/>
+                            <constraint firstItem="K2Z-xZ-bT5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-58" id="adJ-eT-wh3"/>
+                            <constraint firstItem="Lrw-YQ-h4u" firstAttribute="top" secondItem="o2x-2R-x5f" secondAttribute="bottom" constant="183" id="gWS-k8-dmK"/>
+                            <constraint firstItem="o2x-2R-x5f" firstAttribute="top" secondItem="IuE-PU-ej1" secondAttribute="bottom" constant="119" id="u9E-gh-pMm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="circleExplodedView" destination="K2Z-xZ-bT5" id="UqG-vy-rzL"/>
+                        <outlet property="circleView" destination="o2x-2R-x5f" id="RN2-zd-Lk1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="406"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle" width="400" height="400"/>
+        <image name="circle-exploded-1" width="425" height="445"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
