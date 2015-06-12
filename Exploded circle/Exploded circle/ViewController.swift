@@ -23,10 +23,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // define audio player
         audioPlayer = AVAudioPlayer(contentsOfURL: popSound, error: nil)
         audioPlayer.prepareToPlay()
         
         
+        // define gestures
         longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "didLongPress:")
         
         longPressGestureRecognizer.minimumPressDuration = 0.2
@@ -37,15 +39,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         doubleTapGestureRecognizer.requireGestureRecognizerToFail(longPressGestureRecognizer)
         
+        //add gestures to view
+        circleView.addGestureRecognizer(longPressGestureRecognizer)
+        circleView.addGestureRecognizer(doubleTapGestureRecognizer)
         
-        self.circleView.addGestureRecognizer(longPressGestureRecognizer)
-        self.circleView.addGestureRecognizer(doubleTapGestureRecognizer)
-        
-        
+        // set initial view properties
         circleExplodedView.alpha = 0
         circleView.alpha = 1
         
-        self.circleExplodedView.transform = CGAffineTransformMakeScale(0.5, 0.5)
+        circleExplodedView.transform = CGAffineTransformMakeScale(0.5, 0.5)
     }
     
     
@@ -56,6 +58,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
+    // using multiple gestures
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
@@ -64,6 +67,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         println("I've been long-pressed")
         
+        // expand circle on long-press
         if sender.state == UIGestureRecognizerState.Began {
             
             UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
@@ -97,24 +101,29 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         return value * ratio + r2Min - r1Min * ratio
     }
     
+    
     func didTapTwice(sender: UITapGestureRecognizer) {
-        
         
         println("I've been tapped twice")
    
+        // chained animations to simulate explosion
+
         UIView.animateWithDuration(0.2, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 50, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
       
             var initialScale = 1
             
+            
+            // this is a bit janky
             self.circleView.alpha = 0
             var scaleX = self.convertValue(Float(self.circleView.alpha), r1Min: 1, r1Max: 0, r2Min: Float(initialScale), r2Max: 1.21)
             var scaleY = self.convertValue(
-                Float(self.circleView.alpha), r1Min: 0, r1Max: 1, r2Min: 1.21, r2Max: 1.24) // rotation based on translation
+                Float(self.circleView.alpha), r1Min: 0, r1Max: 1, r2Min: 1.21, r2Max: 1.24)
             
             self.circleView.transform = CGAffineTransformMakeScale(CGFloat(scaleX), CGFloat(scaleY))
             
-            self.audioPlayer.play()
             
+            // play a sound
+            self.audioPlayer.play()
 
             
             }) { (Bool) -> Void in
@@ -143,8 +152,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                             
                             
                             }) { (Bool) -> Void in
+                                //empty
                                 println("third animation block")
-                                
                                 UIView.animateWithDuration(0.5, animations: { () -> Void in
                                     
                                     
@@ -155,5 +164,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
         }
     }
+    
+   
     
 }
