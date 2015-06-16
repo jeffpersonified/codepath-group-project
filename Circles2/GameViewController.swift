@@ -33,8 +33,11 @@ class GameViewController: UIViewController {
     var scale: CGAffineTransform!
     var gameScene: GameScene!
     @IBOutlet weak var circleView: UIImageView!
+    var inputTransition: InputTransition!
+
 
     @IBOutlet weak var bubbleView: SKView!
+    var selectedImageView: UIImageView!
     
     var size: CGSize!
     
@@ -74,17 +77,21 @@ class GameViewController: UIViewController {
     
     @IBAction func didTapButton(sender: AnyObject) {
         
+        
+        
+        selectedImageView = circleView as! UIImageView
+        performSegueWithIdentifier("inputSegue", sender: self)
         doneButton.alpha = 1
         
-        
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-//            self.bubbleView.alpha = 0
-            self.translate = CGAffineTransformMakeTranslation(0, -110)
-            self.scale = CGAffineTransformMakeScale(2.6, 2.6)
-            self.circleView.transform = CGAffineTransformConcat(self.translate, self.scale)
-
-        }, completion: nil)
-        
+//        
+//        UIView.animateWithDuration(0.3, animations: { () -> Void in
+////            self.bubbleView.alpha = 0
+//            self.translate = CGAffineTransformMakeTranslation(0, -110)
+//            self.scale = CGAffineTransformMakeScale(2.6, 2.6)
+//            self.circleView.transform = CGAffineTransformConcat(self.translate, self.scale)
+//
+//        }, completion: nil)
+//        
         
         println("\(circleView.frame.size)")
         
@@ -124,6 +131,27 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        var destinationViewController = segue.destinationViewController as! InputViewController
+        
+        destinationViewController.image = self.selectedImageView.image
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        
+        inputTransition = InputTransition()
+        destinationViewController.transitioningDelegate = inputTransition
+
+        
+    }
+
+    
+    
+
+
+    
+    
+    
+    
 }
 
 

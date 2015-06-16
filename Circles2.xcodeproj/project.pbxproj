@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B1B37841B30D82300DBD6F2 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B37831B30D82300DBD6F2 /* InputViewController.swift */; };
+		6B1B37861B30E01300DBD6F2 /* InputTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B37851B30E01300DBD6F2 /* InputTransition.swift */; };
 		6BB5104E1B2FB79000B18EDE /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5104D1B2FB79000B18EDE /* BaseTransition.swift */; };
 		6BB510501B2FB79A00B18EDE /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5104F1B2FB79A00B18EDE /* FadeTransition.swift */; };
 		6BBD96E61B2CA6A200A12635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */; };
@@ -33,8 +34,9 @@
 
 /* Begin PBXFileReference section */
 		6B1B37831B30D82300DBD6F2 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
-		6BB5104D1B2FB79000B18EDE /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTransition.swift; path = ../../Downloads/TransitionDemo/TransitionDemo/BaseTransition.swift; sourceTree = "<group>"; };
-		6BB5104F1B2FB79A00B18EDE /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeTransition.swift; path = ../../Downloads/FadeTransition.swift; sourceTree = "<group>"; };
+		6B1B37851B30E01300DBD6F2 /* InputTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTransition.swift; sourceTree = "<group>"; };
+		6BB5104D1B2FB79000B18EDE /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTransition.swift; path = ../../../Downloads/TransitionDemo/TransitionDemo/BaseTransition.swift; sourceTree = "<group>"; };
+		6BB5104F1B2FB79A00B18EDE /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeTransition.swift; path = ../../../Downloads/FadeTransition.swift; sourceTree = "<group>"; };
 		6BBD96E01B2CA6A200A12635 /* Circles2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBD96E41B2CA6A200A12635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +76,6 @@
 				6BBD96E21B2CA6A200A12635 /* Circles2 */,
 				6BBD96FC1B2CA6A200A12635 /* Circles2Tests */,
 				6BBD96E11B2CA6A200A12635 /* Products */,
-				6BB5104D1B2FB79000B18EDE /* BaseTransition.swift */,
-				6BB5104F1B2FB79A00B18EDE /* FadeTransition.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,11 +91,14 @@
 		6BBD96E21B2CA6A200A12635 /* Circles2 */ = {
 			isa = PBXGroup;
 			children = (
+				6BB5104D1B2FB79000B18EDE /* BaseTransition.swift */,
+				6BB5104F1B2FB79A00B18EDE /* FadeTransition.swift */,
 				6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */,
 				6BBD970B1B2CAA2400A12635 /* Shader1.fsh */,
 				6BBD96E71B2CA6A200A12635 /* GameScene.sks */,
 				6BBD96E91B2CA6A200A12635 /* GameScene.swift */,
 				6BBD96EB1B2CA6A200A12635 /* GameViewController.swift */,
+				6B1B37851B30E01300DBD6F2 /* InputTransition.swift */,
 				6BBD96ED1B2CA6A200A12635 /* Main.storyboard */,
 				6B1B37831B30D82300DBD6F2 /* InputViewController.swift */,
 				6BBD96F01B2CA6A200A12635 /* Images.xcassets */,
@@ -235,6 +238,7 @@
 				6BBD96EA1B2CA6A200A12635 /* GameScene.swift in Sources */,
 				6BB510501B2FB79A00B18EDE /* FadeTransition.swift in Sources */,
 				6BB5104E1B2FB79000B18EDE /* BaseTransition.swift in Sources */,
+				6B1B37861B30E01300DBD6F2 /* InputTransition.swift in Sources */,
 				6B1B37841B30D82300DBD6F2 /* InputViewController.swift in Sources */,
 				6BBD96EC1B2CA6A200A12635 /* GameViewController.swift in Sources */,
 				6BBD96E61B2CA6A200A12635 /* AppDelegate.swift in Sources */,

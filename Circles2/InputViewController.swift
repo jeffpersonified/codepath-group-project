@@ -12,6 +12,9 @@ class InputViewController: UIViewController {
 
     @IBOutlet weak var inputBubbleView: UIImageView!
     
+    var image: UIImage!
+
+    
     @IBOutlet weak var inputField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,7 @@ class InputViewController: UIViewController {
         self.inputField.attributedPlaceholder = NSAttributedString(string:"Enter new todo item",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent((0.6))])
         
+        image = inputBubbleView.image
 
 
     }
@@ -33,18 +37,6 @@ class InputViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         
         
-        
-        UIView.animateWithDuration(1.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 7, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-        
-            var scale = CGAffineTransformMakeScale(3.7, 3.7)
-            var translation = CGAffineTransformMakeTranslation(0, -360)
-            
-            self.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
-            
-            
-            
-            }) { (Bool) -> Void in
-                
                 UIView.animateWithDuration(0.3, animations: { () -> Void in
                     
                     self.inputField.alpha = 1
@@ -55,11 +47,6 @@ class InputViewController: UIViewController {
                     self.inputField.isFirstResponder()
 
                 })
-
-        }
-        
-        
-    
         
     }
 
