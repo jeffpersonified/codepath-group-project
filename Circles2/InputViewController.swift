@@ -84,6 +84,22 @@ class InputViewController: UIViewController {
     
     }
     
+    
+    @IBAction func didPinchInputBubble(sender: UIPinchGestureRecognizer) {
+
+    
+        if sender.state == UIGestureRecognizerState.Changed {
+            
+            inputBubbleView.transform = CGAffineTransformMakeScale(sender.scale, sender.scale)
+            
+            println("scale \(sender.scale)")
+        }
+
+}
+
+    
+    
+    
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
 //        var destinationViewController = segue.destinationViewController as! HomeViewController
 //        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom

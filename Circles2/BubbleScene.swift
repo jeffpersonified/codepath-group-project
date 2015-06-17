@@ -10,6 +10,10 @@ import SpriteKit
 
 class BubbleScene: SKScene {
     
+    
+    var deltaPoint = CGPointZero
+    var myLabel:SKLabelNode!
+
     override func didMoveToView(view: SKView) {
         
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
@@ -18,29 +22,50 @@ class BubbleScene: SKScene {
     
   
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        
-        for touch: AnyObject in touches{
-            let location = touch.locationInNode(self)
-            let sprite = self.nodeAtPoint(location)
-            if self.nodeAtPoint(location) == sprite {
-                
-                sprite.removeFromParent()
-            }
-        }
-    }
+//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+//        
+//        for touch: AnyObject in touches{
+//            let location = touch.locationInNode(self)
+//            let sprite = self.nodeAtPoint(location)
+//            if self.nodeAtPoint(location) == sprite {
+//                
+//                sprite.removeFromParent()
+//            }
+//        }
+//    }
 
 
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
     
-    func addBubble(#size: CGSize) {  //also add text parameter: String
+    for touch: AnyObject in touches{
+    let location = touch.locationInNode(self)
+    let sprite = self.nodeAtPoint(location)
 
-        let location = CGPoint(x: 100, y: 300)
+    if self.nodeAtPoint(location) == sprite {
+        var currentPoint:CGPoint! = touch.locationInNode(self)
+        var previousPoint:CGPoint! = touch.previousLocationInNode(self)
+        sprite.position = CGPointMake(currentPoint.x - previousPoint.x, currentPoint.y - previousPoint.y)
+
+    }
+    }
+    }
+    
+    func addBubble(#size: CGSize, #string: String, #location: CGPoint) {  //also add text parameter: String
+
         
         let sprite = SKSpriteNode(imageNamed:"circle")
         sprite.size = CGSize(width: size.width, height: size.height)
         sprite.xScale = 1.0
         sprite.yScale = 1.0
         sprite.position = location
+        
+        myLabel = SKLabelNode(fontNamed: "Arial")
+        myLabel.fontColor = UIColor.whiteColor()
+        myLabel.text = string 
+        myLabel.fontSize = 17
+        
+        sprite.addChild(myLabel)
+        println("\(myLabel)")
         
         let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
         

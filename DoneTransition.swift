@@ -20,8 +20,10 @@ class DoneTransition: BaseTransition {
         homeViewController = toViewController as! HomeViewController
         
         inputViewController.view.bounds = homeViewController.view.bounds
-        var size = CGSize(width: inputViewController.inputBubbleView.frame.width, height:inputViewController.inputBubbleView.frame.width )
-        self.homeViewController.bubbleScene.addBubble(size: size)
+        var size = CGSize(width: inputViewController.inputBubbleView.frame.width, height:inputViewController.inputBubbleView.frame.width)
+        var string = inputViewController.inputField.text
+        var location = inputViewController.inputBubbleView.center
+        self.homeViewController.bubbleScene.addBubble(size: size, string: string, location: location)
         
         
         toViewController.view.alpha = 0
