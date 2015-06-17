@@ -28,38 +28,50 @@ class GameScene: SKScene {
   
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        /* Called when a touch begins */
         
-        for touch in (touches as! Set<UITouch>) {
+        for touch: AnyObject in touches{
             let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"circle")
-
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-//            sprite.shader = SKShader(fileNamed: "Shader1.fsh")
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-
-            sprite.physicsBody = SKPhysicsBody(circleOfRadius:sprite.size.width/2)
-            sprite.physicsBody!.dynamic = true
-        
-            
-
-            self.addChild(sprite)
-            
-            
-//            println("sprite count: \(sprite.count)")
-            
-            
-            
+            let sprite = self.nodeAtPoint(location)
+            if self.nodeAtPoint(location) == sprite {
+                
+                sprite.removeFromParent()
+            }
         }
     }
     
+//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+//        /* Called when a touch begins */
+//        
+//        for touch in (touches as! Set<UITouch>) {
+//            let location = touch.locationInNode(self)
+//            
+//            let sprite = SKSpriteNode(imageNamed:"circle")
+//
+//            sprite.xScale = 0.5
+//            sprite.yScale = 0.5
+//            sprite.position = location
+////            sprite.shader = SKShader(fileNamed: "Shader1.fsh")
+//            
+//            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+//            
+//            sprite.runAction(SKAction.repeatActionForever(action))
+//            
+//
+//            sprite.physicsBody = SKPhysicsBody(circleOfRadius:sprite.size.width/2)
+//            sprite.physicsBody!.dynamic = true
+//        
+//            
+//
+//            self.addChild(sprite)
+//            
+//            
+////            println("sprite count: \(sprite.count)")
+//            
+//            
+//            
+//        }
+//    }
+//    
 
     
     func addBubble(#size: CGSize) {  //also add text parameter: String
