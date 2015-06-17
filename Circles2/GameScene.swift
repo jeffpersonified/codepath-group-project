@@ -11,15 +11,6 @@ import SpriteKit
 class GameScene: SKScene {
     
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-//        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-//        myLabel.text = "Hello, World!";
-//        myLabel.fontSize = 65;
-//        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-//        
-//        self.addChild(myLabel)
-//        self.scaleMode = SKSceneScaleAspectFit
-
         
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         
@@ -38,40 +29,7 @@ class GameScene: SKScene {
             }
         }
     }
-    
-//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-//        /* Called when a touch begins */
-//        
-//        for touch in (touches as! Set<UITouch>) {
-//            let location = touch.locationInNode(self)
-//            
-//            let sprite = SKSpriteNode(imageNamed:"circle")
-//
-//            sprite.xScale = 0.5
-//            sprite.yScale = 0.5
-//            sprite.position = location
-////            sprite.shader = SKShader(fileNamed: "Shader1.fsh")
-//            
-//            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-//            
-//            sprite.runAction(SKAction.repeatActionForever(action))
-//            
-//
-//            sprite.physicsBody = SKPhysicsBody(circleOfRadius:sprite.size.width/2)
-//            sprite.physicsBody!.dynamic = true
-//        
-//            
-//
-//            self.addChild(sprite)
-//            
-//            
-////            println("sprite count: \(sprite.count)")
-//            
-//            
-//            
-//        }
-//    }
-//    
+
 
     
     func addBubble(#size: CGSize) {  //also add text parameter: String
@@ -83,7 +41,6 @@ class GameScene: SKScene {
         sprite.xScale = 1.0
         sprite.yScale = 1.0
         sprite.position = location
-        //            sprite.shader = SKShader(fileNamed: "Shader1.fsh")
         
         let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
         

@@ -113,6 +113,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="KxR-Ju-Utc" id="Q9g-Yo-msy"/>
+                        <outlet property="doneButton" destination="1eY-K3-uga" id="CiX-40-JN4"/>
                         <outlet property="inputBubbleView" destination="iG8-av-cN4" id="tEU-wf-gCq"/>
                         <outlet property="inputField" destination="sag-hk-SsC" id="0Wp-Ta-1r8"/>
                     </connections>

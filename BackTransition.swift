@@ -28,13 +28,16 @@ class BackTransition: BaseTransition {
         toViewController.view.alpha = 0
         
         
-                UIView.animateWithDuration(1.02, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 8, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                     
 
                     var scale = CGAffineTransformMakeScale(1, 1)
                     var translation = CGAffineTransformMakeTranslation(0, 0)
                     
                     self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
+                    self.inputViewController.cancelButton.alpha = 0
+                    self.inputViewController.doneButton.alpha = 0
+
                     
                     
                     
@@ -42,7 +45,7 @@ class BackTransition: BaseTransition {
                         
                         
                         
-                        UIView.animateWithDuration(1.02
+                        UIView.animateWithDuration(0.6
                             , animations: { () -> Void in
                             
                             toViewController.view.alpha = 1

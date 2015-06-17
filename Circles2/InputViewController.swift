@@ -16,6 +16,8 @@ class InputViewController: UIViewController {
     var gameScene: GameScene!
     var backTransition: BackTransition!
 
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var inputField: UITextField!
     override func viewDidLoad() {
