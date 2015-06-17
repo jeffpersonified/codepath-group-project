@@ -109,26 +109,25 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapDismiss:" destination="DLc-J4-H5k" eventType="touchUpInside" id="oH6-CU-IDd"/>
+                                    <action selector="didTapCancel:" destination="DLc-J4-H5k" eventType="touchUpInside" id="SkG-g2-Gwy"/>
+                                    <segue destination="LVB-YS-i5n" kind="custom" identifier="cancelSegue" id="teK-QN-tob"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1eY-K3-uga">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1eY-K3-uga">
                                 <rect key="frame" x="246" y="312" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapDismiss:" destination="DLc-J4-H5k" eventType="touchUpInside" id="api-90-1If"/>
-                                    <segue destination="LVB-YS-i5n" kind="custom" identifier="backSegue" id="G73-NT-sPt"/>
+                                    <action selector="didTapDone:" destination="DLc-J4-H5k" eventType="touchUpInside" id="8ka-Vg-S5W"/>
+                                    <segue destination="LVB-YS-i5n" kind="custom" identifier="doneSegue" id="a2F-js-kxc"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="KxR-Ju-Utc" id="Q9g-Yo-msy"/>
-                        <outlet property="doneButton" destination="1eY-K3-uga" id="CiX-40-JN4"/>
                         <outlet property="inputBubbleView" destination="iG8-av-cN4" id="tEU-wf-gCq"/>
                         <outlet property="inputField" destination="sag-hk-SsC" id="0Wp-Ta-1r8"/>
                     </connections>
@@ -147,4 +146,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="a2F-js-kxc"/>
+    </inferredMetricsTieBreakers>
 </document>

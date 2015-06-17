@@ -11,7 +11,6 @@ import UIKit
 class CancelTransition: BaseTransition {
     
     
-    
     var inputViewController: InputViewController!
     var homeViewController: HomeViewController!
     
@@ -21,9 +20,7 @@ class CancelTransition: BaseTransition {
         homeViewController = toViewController as! HomeViewController
         
         inputViewController.view.bounds = homeViewController.view.bounds
-        var size = CGSize(width: inputViewController.inputBubbleView.frame.width, height:inputViewController.inputBubbleView.frame.width )
-        self.homeViewController.bubbleScene.addBubble(size: size)
-        
+ 
         
         toViewController.view.alpha = 0
         
@@ -35,8 +32,8 @@ class CancelTransition: BaseTransition {
                     var translation = CGAffineTransformMakeTranslation(0, 0)
                     
                     self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
-                    self.inputViewController.cancelButton.alpha = 0
-                    self.inputViewController.doneButton.alpha = 0
+//                    self.inputViewController.cancelButton.alpha = 0
+//                    self.inputViewController.doneButton.alpha = 0
 
                     
                     

@@ -15,6 +15,7 @@ class InputViewController: UIViewController {
     var image: UIImage!
     var bubbleScene: BubbleScene!
     var cancelTransition: CancelTransition!
+    var doneTransition: DoneTransition!
 
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -23,6 +24,7 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         inputBubbleView.transform = CGAffineTransformMakeScale(1, 1)
 
         self.inputField.alpha = 0
@@ -51,26 +53,48 @@ class InputViewController: UIViewController {
     }
     
 
-    @IBAction func didTapDismiss(sender: UIButton) {
+
+//
+    @IBAction func didTapDone(sender: AnyObject) {
         
-        println("Tapped dismiss")
+        println("Tapped Done")
+        performSegueWithIdentifier("doneSegue", sender: nil)
         
-        performSegueWithIdentifier("backSegue", sender: nil)
+    }
+    
+    @IBAction func didTapCancel(sender: AnyObject) {
+        
+        println("Tapped Cancel")
+        performSegueWithIdentifier("cancelSegue", sender: nil)
+        
     }
 
-    
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var destinationViewController = segue.destinationViewController as! HomeViewController
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-        
         cancelTransition = CancelTransition()
         destinationViewController.transitioningDelegate = cancelTransition
         
-        
-    }
-
+//        
+        if segue.identifier == "doneSegue" {
+            doneTransition = DoneTransition()
+            destinationViewController.transitioningDelegate = doneTransition
+       
+        }
     
+    }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        var destinationViewController = segue.destinationViewController as! HomeViewController
+//        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+//        
+//        cancelTransition = CancelTransition()
+//        destinationViewController.transitioningDelegate = CancelTransition
+//        
+//        
+//    }
+//
+//    
     /*
     // MARK: - Navigation
 
