@@ -1,5 +1,5 @@
  //
-//  GameScene.swift
+//  BubbleScene.swift
 //  Circles2
 //
 //  Created by Rebecca Goldman on 6/13/15.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class BubbleScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         

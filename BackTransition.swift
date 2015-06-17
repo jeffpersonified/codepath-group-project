@@ -22,7 +22,7 @@ class BackTransition: BaseTransition {
         
         inputViewController.view.bounds = homeViewController.view.bounds
         var size = CGSize(width: inputViewController.inputBubbleView.frame.width, height:inputViewController.inputBubbleView.frame.width )
-        self.homeViewController.gameScene.addBubble(size: size)
+        self.homeViewController.bubbleScene.addBubble(size: size)
         
         
         toViewController.view.alpha = 0

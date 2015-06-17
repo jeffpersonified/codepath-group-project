@@ -16,7 +16,7 @@ extension SKNode {
             var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
+            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! BubbleScene
             archiver.finishDecoding()
             return scene
         } else {
@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var superView: UIView!
     var translate: CGAffineTransform!
     var scale: CGAffineTransform!
-    var gameScene: GameScene!
+    var bubbleScene: BubbleScene!
     @IBOutlet weak var circleView: UIImageView!
     var inputTransition: InputTransition!
 
@@ -49,9 +49,9 @@ class HomeViewController: UIViewController {
 //        let inputView = storyboard.instantiateViewControllerWithIdentifier("InputViewController") as! InputViewController
 
 
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+        if let scene = BubbleScene.unarchiveFromFile("BubbleScene") as? BubbleScene {
             // Configure the view.
-            self.gameScene = scene
+            self.bubbleScene = scene
             let skView = bubbleView as SKView
             println("\(circleView.frame.size)")
         let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
@@ -63,7 +63,6 @@ class HomeViewController: UIViewController {
             skView.presentScene(scene)
 
             
-//            doneButton.alpha = 0
         }
     }
 
@@ -75,7 +74,6 @@ class HomeViewController: UIViewController {
     
     @IBAction func didTapButton(sender: AnyObject) {
         
-//        selectedImageView = circleView as! UIImageView
         performSegueWithIdentifier("inputSegue", sender: self)
         
         println("\(circleView.frame.size)")

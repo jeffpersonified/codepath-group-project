@@ -13,7 +13,7 @@ class InputViewController: UIViewController {
     @IBOutlet weak var inputBubbleView: UIImageView!
     
     var image: UIImage!
-    var gameScene: GameScene!
+    var bubbleScene: BubbleScene!
     var backTransition: BackTransition!
 
     @IBOutlet weak var doneButton: UIButton!
