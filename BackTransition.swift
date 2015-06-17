@@ -13,16 +13,16 @@ class BackTransition: BaseTransition {
     
     
     var inputViewController: InputViewController!
-    var gameViewController: GameViewController!
+    var homeViewController: HomeViewController!
     
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
         
         inputViewController = fromViewController as! InputViewController
-        gameViewController = toViewController as! GameViewController
+        homeViewController = toViewController as! HomeViewController
         
-        inputViewController.view.bounds = gameViewController.view.bounds
+        inputViewController.view.bounds = homeViewController.view.bounds
         var size = CGSize(width: inputViewController.inputBubbleView.frame.width, height:inputViewController.inputBubbleView.frame.width )
-        self.gameViewController.gameScene.addBubble(size: size)
+        self.homeViewController.gameScene.addBubble(size: size)
         
         
         toViewController.view.alpha = 0

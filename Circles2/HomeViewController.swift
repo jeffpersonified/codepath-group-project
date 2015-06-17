@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  HomeViewController.swift
 //  Circles2
 //
 //  Created by Rebecca Goldman on 6/13/15.
@@ -25,7 +25,7 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     
     @IBOutlet var superView: UIView!

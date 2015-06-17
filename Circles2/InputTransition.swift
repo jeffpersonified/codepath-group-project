@@ -12,14 +12,14 @@ class InputTransition: BaseTransition {
     
     
     var inputViewController: InputViewController!
-    var gameViewController: GameViewController!
+    var homeViewController: HomeViewController!
 
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
         
         inputViewController = toViewController as! InputViewController
-        gameViewController = fromViewController as! GameViewController
+        homeViewController = fromViewController as! HomeViewController
         
-        inputViewController.view.bounds = gameViewController.view.bounds
+        inputViewController.view.bounds = homeViewController.view.bounds
 
      
 
