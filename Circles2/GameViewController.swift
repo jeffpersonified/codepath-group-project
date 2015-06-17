@@ -48,7 +48,7 @@ class GameViewController: UIViewController {
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
             self.gameScene = scene
-            let skView = bubbleView as! SKView
+            let skView = bubbleView as SKView
             println("\(circleView.frame.size)")
         let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
         scene.size = screenSize
@@ -65,7 +65,7 @@ class GameViewController: UIViewController {
             skView.presentScene(scene)
 
             
-            doneButton.alpha = 0
+//            doneButton.alpha = 0
         }
     }
 
@@ -79,9 +79,9 @@ class GameViewController: UIViewController {
         
         
         
-        selectedImageView = circleView as! UIImageView
+        selectedImageView = circleView as UIImageView
         performSegueWithIdentifier("inputSegue", sender: self)
-        doneButton.alpha = 1
+//        doneButton.alpha = 1
         
 //        
 //        UIView.animateWithDuration(0.3, animations: { () -> Void in
@@ -102,17 +102,17 @@ class GameViewController: UIViewController {
     
     
     
-    @IBAction func didTapDone(sender: AnyObject) {
-//        var width = CGFloat(arc4random_uniform(100) + 20)
-        var size = CGSize(width: circleView.frame.width, height: circleView.frame.width)
-        
-//        var string =
-        gameScene.addBubble(size: size) 
-        println("\(circleView.frame.size)")
-
-        
-        
-    }
+//    @IBAction func didTapDone(sender: AnyObject) {
+////        var width = CGFloat(arc4random_uniform(100) + 20)
+//        var size = CGSize(width: circleView.frame.width, height: circleView.frame.width)
+//        
+////        var string =
+//        gameScene.addBubble(size: size) 
+//        println("\(circleView.frame.size)")
+//
+//        
+//        
+//    }
     
     
     override func supportedInterfaceOrientations() -> Int {
@@ -146,6 +146,9 @@ class GameViewController: UIViewController {
 
     
     
+    @IBAction func didTap(sender: AnyObject) {
+        println("This is covering the other circle")
+    }
 
 
     

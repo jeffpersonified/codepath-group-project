@@ -13,8 +13,11 @@ class InputViewController: UIViewController {
     @IBOutlet weak var inputBubbleView: UIImageView!
     
     var image: UIImage!
+    var gameScene: GameScene!
 
     
+    @IBOutlet var dividerView: UIView!
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var inputField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,32 +25,24 @@ class InputViewController: UIViewController {
         inputBubbleView.transform = CGAffineTransformMakeScale(1, 1)
 
         self.inputField.alpha = 0
+        self.dividerView.alpha = 0
+
 
         // Do any additional setup after loading the view.
         
-        self.inputField.isFirstResponder()
         self.inputField.attributedPlaceholder = NSAttributedString(string:"Enter new todo item",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent((0.6))])
         
         image = inputBubbleView.image
 
 
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
-                    
-                    self.inputField.alpha = 1
-                    
-                    
-                }, completion: { (Bool) -> Void in
-                    
-                    self.inputField.isFirstResponder()
 
-                })
-        
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        inputField.isFirstResponder()
+        inputField.userInteractionEnabled = true
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +51,32 @@ class InputViewController: UIViewController {
     }
     
 
+    @IBAction func didDismiss(sender: AnyObject) {
+    
+        println("tapped done")
+        dismissViewControllerAnimated(true, completion: nil)
+    
+        
+        var size = CGSize(width: inputBubbleView.frame.width, height: inputBubbleView.frame.width)
+        
+        //        var string =
+        gameScene.addBubble(size: size)
+    
+        
+    }
+    
+    @IBAction func didTap(sender: AnyObject) {
+        
+        println("This is coveirng your text")
+    }
+    
+    
+    
+    @IBAction func didTapView(sender: AnyObject) {
+    
+    println("This view does not exist") 
+    }
+    
     /*
     // MARK: - Navigation
 
