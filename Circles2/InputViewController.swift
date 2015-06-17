@@ -13,11 +13,10 @@ class InputViewController: UIViewController {
     @IBOutlet weak var inputBubbleView: UIImageView!
     
     var image: UIImage!
-//    var gameScene: GameScene!
+    var gameScene: GameScene!
+    var backTransition: BackTransition!
 
     
-    @IBOutlet var dividerView: UIView!
-    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var inputField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,6 @@ class InputViewController: UIViewController {
         inputBubbleView.transform = CGAffineTransformMakeScale(1, 1)
 
         self.inputField.alpha = 0
-        self.dividerView.alpha = 0
 
 
         // Do any additional setup after loading the view.
@@ -53,28 +51,23 @@ class InputViewController: UIViewController {
 
     @IBAction func didTapDismiss(sender: UIButton) {
         
-        dismissViewControllerAnimated(true, completion: nil)
-
-    }
-//
-//        var size = CGSize(width: inputBubbleView.frame.width, height: inputBubbleView.frame.width)
-//        
-//        //        var string =
-//        gameScene.addBubble(size: size)
-    
-
-    
-    @IBAction func didTap(sender: AnyObject) {
+        println("Tapped dismiss")
         
-        println("This is coveirng your text")
+        performSegueWithIdentifier("backSegue", sender: nil)
     }
+
     
-    
-    
-    @IBAction func didTapView(sender: AnyObject) {
-    
-    println("This view does not exist") 
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        var destinationViewController = segue.destinationViewController as! GameViewController
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        
+        backTransition = BackTransition()
+        destinationViewController.transitioningDelegate = backTransition
+        
+        
     }
+
     
     /*
     // MARK: - Navigation

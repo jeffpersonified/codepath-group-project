@@ -25,7 +25,7 @@ class InputTransition: BaseTransition {
 
         toViewController.view.alpha = 0
 
-        UIView.animateWithDuration(0, animations: { () -> Void in
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
             toViewController.view.alpha = 1
 
             
@@ -37,9 +37,7 @@ class InputTransition: BaseTransition {
                 var scale = CGAffineTransformMakeScale(3.7, 3.7)
                 var translation = CGAffineTransformMakeTranslation(0, -360)
 
-
                 self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
-                
                 
                 
                 }, completion: { (Bool) -> Void in
@@ -48,14 +46,12 @@ class InputTransition: BaseTransition {
             
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 
-                self.inputViewController.dividerView.alpha = 1
                 self.inputViewController.inputField.alpha = 1
 
                 
-                
                 }, completion: { (Bool) -> Void in
                     
-//                    fromViewController.view.removeFromSuperview()
+
                    self.finish()
                     
             })
@@ -68,21 +64,4 @@ class InputTransition: BaseTransition {
     }
 
 
-    override func dismissTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
-        println("pressed done")
-
-        inputViewController = fromViewController as! InputViewController
-        gameViewController = toViewController as! GameViewController
-
-        fromViewController.view.alpha = 1
-        UIView.animateWithDuration(duration, animations: {
-            fromViewController.view.alpha = 0
-            }) { (finished: Bool) -> Void in
-                self.finish()
-        }
-
-
-        
-    
-    }
 }

@@ -66,7 +66,7 @@ class GameScene: SKScene {
 //        let location = touch.locationInNode(self)
         
 //        var newCircle.image = GameViewController.circleView
-        let location = CGPoint(x: 0, y: 400)
+        let location = CGPoint(x: 100, y: 300)
         
         let sprite = SKSpriteNode(imageNamed:"circle")
         sprite.size = CGSize(width: size.width, height: size.height)

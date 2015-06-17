@@ -64,12 +64,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="442"/>
+            <point key="canvasLocation" x="-119" y="458"/>
         </scene>
         <!--Input View Controller-->
         <scene sceneID="4hH-PR-O2o">
             <objects>
-                <viewController id="DLc-J4-H5k" customClass="InputViewController" customModule="Circles2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InputViewController" id="DLc-J4-H5k" customClass="InputViewController" customModule="Circles2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FeJ-mC-igW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,11 +78,6 @@
                                 <rect key="frame" x="128" y="496" width="63" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <gestureRecognizers/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XA7-wa-tT1">
-                                <rect key="frame" x="-8" y="298" width="328" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91081053020000002" green="0.91078323130000005" blue="0.91079866890000005" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter todo item" textAlignment="center" minimumFontSize="17" id="sag-hk-SsC">
                                 <rect key="frame" x="91" y="159" width="137" height="30"/>
@@ -99,32 +94,32 @@
                                     <color key="titleColor" red="0.40000000000000002" green="0.41999999999999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapDismiss:" destination="DLc-J4-H5k" eventType="touchUpInside" id="oH6-CU-IDd"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZUk-lm-2BA">
-                                <rect key="frame" x="199" y="298" width="121" height="58"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1eY-K3-uga">
+                                <rect key="frame" x="246" y="312" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.40000000000000002" green="0.41999999999999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didDismiss:" destination="DLc-J4-H5k" eventType="touchUpInside" id="n9x-7f-O30"/>
-                                    <action selector="didTapDismiss:" destination="DLc-J4-H5k" eventType="touchUpInside" id="7Pc-kB-RUQ"/>
+                                    <action selector="didTapDismiss:" destination="DLc-J4-H5k" eventType="touchUpInside" id="api-90-1If"/>
+                                    <segue destination="LVB-YS-i5n" kind="custom" identifier="backSegue" id="G73-NT-sPt"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="dividerView" destination="FeJ-mC-igW" id="MmT-Ig-X17"/>
                         <outlet property="inputBubbleView" destination="iG8-av-cN4" id="tEU-wf-gCq"/>
                         <outlet property="inputField" destination="sag-hk-SsC" id="0Wp-Ta-1r8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RK-ii-07F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="1043"/>
+            <point key="canvasLocation" x="429" y="448"/>
         </scene>
     </scenes>
     <resources>

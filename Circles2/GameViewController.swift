@@ -45,6 +45,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let inputView = storyboard.instantiateViewControllerWithIdentifier("InputViewController") as! InputViewController
+
 
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
@@ -56,13 +59,7 @@ class GameViewController: UIViewController {
 
             skView.ignoresSiblingOrder = true
             
-            /* Set the scale mode to scale to fit the window */
 
-//            scene.scaleMode = .AspectFit
-            
-//            scene.imageToPass = createdImage
-
-            
             skView.presentScene(scene)
 
             
@@ -99,7 +96,6 @@ class GameViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
 
     override func prefersStatusBarHidden() -> Bool {
@@ -108,8 +104,6 @@ class GameViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationViewController = segue.destinationViewController as! InputViewController
-        
-//        destinationViewController.image = self.circleView.image
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
         
         inputTransition = InputTransition()
