@@ -14,7 +14,7 @@ class InputViewController: UIViewController {
     
     var image: UIImage!
     var bubbleScene: BubbleScene!
-    var backTransition: BackTransition!
+    var cancelTransition: CancelTransition!
 
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -64,8 +64,8 @@ class InputViewController: UIViewController {
         var destinationViewController = segue.destinationViewController as! HomeViewController
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
         
-        backTransition = BackTransition()
-        destinationViewController.transitioningDelegate = backTransition
+        cancelTransition = CancelTransition()
+        destinationViewController.transitioningDelegate = cancelTransition
         
         
     }

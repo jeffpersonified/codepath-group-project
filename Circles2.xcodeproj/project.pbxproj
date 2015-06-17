@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B0888E71B3109AE0093F76C /* BackTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0888E61B3109AE0093F76C /* BackTransition.swift */; };
+		6B0888E71B3109AE0093F76C /* CancelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0888E61B3109AE0093F76C /* CancelTransition.swift */; };
 		6B1B37841B30D82300DBD6F2 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B37831B30D82300DBD6F2 /* InputViewController.swift */; };
 		6B1B37861B30E01300DBD6F2 /* InputTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B37851B30E01300DBD6F2 /* InputTransition.swift */; };
 		6B75FFD61B312C92000A6FEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75FFD51B312C92000A6FEE /* LoginViewController.swift */; };
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		3DFD80648FF24A6BA296F49A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		6B0888E61B3109AE0093F76C /* BackTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTransition.swift; sourceTree = "<group>"; };
+		6B0888E61B3109AE0093F76C /* CancelTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelTransition.swift; sourceTree = "<group>"; };
 		6B1B37831B30D82300DBD6F2 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputViewController.swift; path = Circles2/InputViewController.swift; sourceTree = "<group>"; };
 		6B1B37851B30E01300DBD6F2 /* InputTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTransition.swift; path = Circles2/InputTransition.swift; sourceTree = "<group>"; };
 		6B75FFD51B312C92000A6FEE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Circles2/LoginViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		6B75FFD31B312854000A6FEE /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				6B0888E61B3109AE0093F76C /* BackTransition.swift */,
+				6B0888E61B3109AE0093F76C /* CancelTransition.swift */,
 				6B1B37851B30E01300DBD6F2 /* InputTransition.swift */,
 				BB62F1531B3119E90024B890 /* BaseTransition.swift */,
 				BB62F1541B3119E90024B890 /* FadeTransition.swift */,
@@ -320,7 +320,7 @@
 			files = (
 				6B75FFD61B312C92000A6FEE /* LoginViewController.swift in Sources */,
 				6BBD96EA1B2CA6A200A12635 /* BubbleScene.swift in Sources */,
-				6B0888E71B3109AE0093F76C /* BackTransition.swift in Sources */,
+				6B0888E71B3109AE0093F76C /* CancelTransition.swift in Sources */,
 				BB62F1551B3119E90024B890 /* BaseTransition.swift in Sources */,
 				6B1B37861B30E01300DBD6F2 /* InputTransition.swift in Sources */,
 				BB62F1561B3119E90024B890 /* FadeTransition.swift in Sources */,

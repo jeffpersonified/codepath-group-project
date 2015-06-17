@@ -1,5 +1,5 @@
 //
-//  BackTransition.swift
+//  CancelTransition.swift
 //  Circles2
 //
 //  Created by Rebecca Goldman on 6/16/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BackTransition: BaseTransition {
+class CancelTransition: BaseTransition {
     
     
     
