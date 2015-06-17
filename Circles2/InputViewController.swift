@@ -59,7 +59,7 @@ class InputViewController: UIViewController {
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        var destinationViewController = segue.destinationViewController as! GameViewController
+        var destinationViewController = segue.destinationViewController as! HomeViewController
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
         
         backTransition = BackTransition()

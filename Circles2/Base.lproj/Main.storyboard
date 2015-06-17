@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="LVB-YS-i5n" customClass="GameViewController" customModule="Circles2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="LVB-YS-i5n" customClass="HomeViewController" customModule="Circles2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="bdc-N1-crn" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

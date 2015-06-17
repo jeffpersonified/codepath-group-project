@@ -75,9 +75,7 @@ class GameScene: SKScene {
 
     
     func addBubble(#size: CGSize) {  //also add text parameter: String
-//        let location = touch.locationInNode(self)
-        
-//        var newCircle.image = GameViewController.circleView
+
         let location = CGPoint(x: 100, y: 300)
         
         let sprite = SKSpriteNode(imageNamed:"circle")
