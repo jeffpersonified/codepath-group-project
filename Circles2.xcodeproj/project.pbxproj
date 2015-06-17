@@ -22,6 +22,7 @@
 		7F30BF2E0CB7B826FB6A3BD9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCBCA05CDA00A8F25A7F55F1 /* libPods.a */; };
 		BB62F1551B3119E90024B890 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62F1531B3119E90024B890 /* BaseTransition.swift */; };
 		BB62F1561B3119E90024B890 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62F1541B3119E90024B890 /* FadeTransition.swift */; };
+		BB62F15D1B3129D90024B890 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62F15C1B3129D90024B890 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		BB62F1531B3119E90024B890 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		BB62F1541B3119E90024B890 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		BB62F1571B3124B90024B890 /* Circles2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Circles2-Bridging-Header.h"; sourceTree = "<group>"; };
+		BB62F15C1B3129D90024B890 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DCBCA05CDA00A8F25A7F55F1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFEB0F9F3EC51FF5E1FCF0E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				BB62F1531B3119E90024B890 /* BaseTransition.swift */,
+				BB62F15C1B3129D90024B890 /* LoginViewController.swift */,
 				BB62F1541B3119E90024B890 /* FadeTransition.swift */,
 				6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */,
 				6BBD970B1B2CAA2400A12635 /* Shader1.fsh */,
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB62F15D1B3129D90024B890 /* LoginViewController.swift in Sources */,
 				6BBD96EA1B2CA6A200A12635 /* GameScene.swift in Sources */,
 				6B0888E71B3109AE0093F76C /* BackTransition.swift in Sources */,
 				BB62F1551B3119E90024B890 /* BaseTransition.swift in Sources */,
