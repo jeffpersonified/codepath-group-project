@@ -13,7 +13,7 @@ class InputViewController: UIViewController {
     @IBOutlet weak var inputBubbleView: UIImageView!
     
     var image: UIImage!
-    var gameScene: GameScene!
+//    var gameScene: GameScene!
 
     
     @IBOutlet var dividerView: UIView!
@@ -51,19 +51,18 @@ class InputViewController: UIViewController {
     }
     
 
-    @IBAction func didDismiss(sender: AnyObject) {
-    
-        println("tapped done")
+    @IBAction func didTapDismiss(sender: UIButton) {
+        
         dismissViewControllerAnimated(true, completion: nil)
-    
-        
-        var size = CGSize(width: inputBubbleView.frame.width, height: inputBubbleView.frame.width)
-        
-        //        var string =
-        gameScene.addBubble(size: size)
-    
-        
+
     }
+//
+//        var size = CGSize(width: inputBubbleView.frame.width, height: inputBubbleView.frame.width)
+//        
+//        //        var string =
+//        gameScene.addBubble(size: size)
+    
+
     
     @IBAction func didTap(sender: AnyObject) {
         

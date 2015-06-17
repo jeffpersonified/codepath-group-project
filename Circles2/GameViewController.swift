@@ -44,6 +44,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
@@ -77,21 +78,8 @@ class GameViewController: UIViewController {
     
     @IBAction func didTapButton(sender: AnyObject) {
         
-        
-        
-        selectedImageView = circleView as UIImageView
+//        selectedImageView = circleView as! UIImageView
         performSegueWithIdentifier("inputSegue", sender: self)
-//        doneButton.alpha = 1
-        
-//        
-//        UIView.animateWithDuration(0.3, animations: { () -> Void in
-////            self.bubbleView.alpha = 0
-//            self.translate = CGAffineTransformMakeTranslation(0, -110)
-//            self.scale = CGAffineTransformMakeScale(2.6, 2.6)
-//            self.circleView.transform = CGAffineTransformConcat(self.translate, self.scale)
-//
-//        }, completion: nil)
-//        
         
         println("\(circleView.frame.size)")
         
@@ -99,20 +87,6 @@ class GameViewController: UIViewController {
         
     }
     
-    
-    
-    
-//    @IBAction func didTapDone(sender: AnyObject) {
-////        var width = CGFloat(arc4random_uniform(100) + 20)
-//        var size = CGSize(width: circleView.frame.width, height: circleView.frame.width)
-//        
-////        var string =
-//        gameScene.addBubble(size: size) 
-//        println("\(circleView.frame.size)")
-//
-//        
-//        
-//    }
     
     
     override func supportedInterfaceOrientations() -> Int {
@@ -135,7 +109,7 @@ class GameViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationViewController = segue.destinationViewController as! InputViewController
         
-        destinationViewController.image = self.selectedImageView.image
+//        destinationViewController.image = self.circleView.image
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
         
         inputTransition = InputTransition()

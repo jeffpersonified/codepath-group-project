@@ -19,8 +19,9 @@ class InputTransition: BaseTransition {
         inputViewController = toViewController as! InputViewController
         gameViewController = fromViewController as! GameViewController
         
-        let screenWidth = UIScreen.mainScreen().bounds.width
+        inputViewController.view.bounds = gameViewController.view.bounds
 
+     
 
         toViewController.view.alpha = 0
 
@@ -54,7 +55,8 @@ class InputTransition: BaseTransition {
                 
                 }, completion: { (Bool) -> Void in
                     
-                    self.inputViewController.inputField.isFirstResponder()
+//                    fromViewController.view.removeFromSuperview()
+                   self.finish()
                     
             })
 
@@ -71,41 +73,16 @@ class InputTransition: BaseTransition {
 
         inputViewController = fromViewController as! InputViewController
         gameViewController = toViewController as! GameViewController
-        
-        
-        toViewController.view.alpha = 0
-        
-  
-                
-                UIView.animateWithDuration(1.23, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 7, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-                    fromViewController.view.alpha = 0
-                    toViewController.view.alpha = 1
 
-                    
-                    var scale = CGAffineTransformMakeScale(1, 1)
-                    var translation = CGAffineTransformMakeTranslation(0, 360)
-                    
-                    self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
-                    
-                    
-                    
-                    }, completion: { (Bool) -> Void in
-                        
-                        
-                        
-                        UIView.animateWithDuration(0.3, animations: { () -> Void in
-                            
-                            self.inputViewController.inputField.alpha = 0
-                            
-                            
-                            }, completion: { (Bool) -> Void in
-                                
-                                
-                        })
-                        
-                        
-                })
+        fromViewController.view.alpha = 1
+        UIView.animateWithDuration(duration, animations: {
+            fromViewController.view.alpha = 0
+            }) { (finished: Bool) -> Void in
+                self.finish()
         }
 
-   
+
+        
+    
+    }
 }
