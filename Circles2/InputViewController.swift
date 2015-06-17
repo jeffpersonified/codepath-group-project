@@ -13,6 +13,8 @@ class InputViewController: UIViewController {
     @IBOutlet weak var inputBubbleView: UIImageView!
     
     var image: UIImage!
+    var gameScene: GameScene!
+    var backTransition: BackTransition!
 
     
     @IBOutlet weak var inputField: UITextField!
@@ -23,31 +25,22 @@ class InputViewController: UIViewController {
 
         self.inputField.alpha = 0
 
+
         // Do any additional setup after loading the view.
         
-        self.inputField.isFirstResponder()
         self.inputField.attributedPlaceholder = NSAttributedString(string:"Enter new todo item",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent((0.6))])
         
         image = inputBubbleView.image
 
 
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
-                    
-                    self.inputField.alpha = 1
-                    
-                    
-                }, completion: { (Bool) -> Void in
-                    
-                    self.inputField.isFirstResponder()
 
-                })
-        
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        inputField.isFirstResponder()
+        inputField.userInteractionEnabled = true
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +49,26 @@ class InputViewController: UIViewController {
     }
     
 
+    @IBAction func didTapDismiss(sender: UIButton) {
+        
+        println("Tapped dismiss")
+        
+        performSegueWithIdentifier("backSegue", sender: nil)
+    }
+
+    
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        var destinationViewController = segue.destinationViewController as! GameViewController
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        
+        backTransition = BackTransition()
+        destinationViewController.transitioningDelegate = backTransition
+        
+        
+    }
+
+    
     /*
     // MARK: - Navigation
 

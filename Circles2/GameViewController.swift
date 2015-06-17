@@ -44,28 +44,26 @@ class GameViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let inputView = storyboard.instantiateViewControllerWithIdentifier("InputViewController") as! InputViewController
+
 
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
             self.gameScene = scene
-            let skView = bubbleView as! SKView
+            let skView = bubbleView as SKView
             println("\(circleView.frame.size)")
         let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
         scene.size = screenSize
 
             skView.ignoresSiblingOrder = true
             
-            /* Set the scale mode to scale to fit the window */
 
-//            scene.scaleMode = .AspectFit
-            
-//            scene.imageToPass = createdImage
-
-            
             skView.presentScene(scene)
 
             
-            doneButton.alpha = 0
+//            doneButton.alpha = 0
         }
     }
 
@@ -77,21 +75,8 @@ class GameViewController: UIViewController {
     
     @IBAction func didTapButton(sender: AnyObject) {
         
-        
-        
-        selectedImageView = circleView as! UIImageView
+//        selectedImageView = circleView as! UIImageView
         performSegueWithIdentifier("inputSegue", sender: self)
-        doneButton.alpha = 1
-        
-//        
-//        UIView.animateWithDuration(0.3, animations: { () -> Void in
-////            self.bubbleView.alpha = 0
-//            self.translate = CGAffineTransformMakeTranslation(0, -110)
-//            self.scale = CGAffineTransformMakeScale(2.6, 2.6)
-//            self.circleView.transform = CGAffineTransformConcat(self.translate, self.scale)
-//
-//        }, completion: nil)
-//        
         
         println("\(circleView.frame.size)")
         
@@ -99,20 +84,6 @@ class GameViewController: UIViewController {
         
     }
     
-    
-    
-    
-    @IBAction func didTapDone(sender: AnyObject) {
-//        var width = CGFloat(arc4random_uniform(100) + 20)
-        var size = CGSize(width: circleView.frame.width, height: circleView.frame.width)
-        
-//        var string =
-        gameScene.addBubble(size: size) 
-        println("\(circleView.frame.size)")
-
-        
-        
-    }
     
     
     override func supportedInterfaceOrientations() -> Int {
@@ -125,7 +96,6 @@ class GameViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
 
     override func prefersStatusBarHidden() -> Bool {
@@ -134,8 +104,6 @@ class GameViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationViewController = segue.destinationViewController as! InputViewController
-        
-        destinationViewController.image = self.selectedImageView.image
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
         
         inputTransition = InputTransition()
@@ -146,6 +114,9 @@ class GameViewController: UIViewController {
 
     
     
+    @IBAction func didTap(sender: AnyObject) {
+        println("This is covering the other circle")
+    }
 
 
     
