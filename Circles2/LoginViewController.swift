@@ -9,27 +9,54 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func didPressSignUpButton(sender: AnyObject) {
+        signUpUser()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didPressLoginButton(sender: AnyObject) {
+        logInUser()
     }
-    */
 
+    func signUpUser() {
+        var user = PFUser()
+        user.username = usernameField.text
+        user.password = passwordField.text
+        
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? NSString
+                println(errorString)
+                println("Failed to Sign In")
+            } else {
+                self.performSegueWithIdentifier("OpenSesame", sender: nil)
+            }
+        }
+    }
+    
+    func logInUser() {
+        let username = usernameField.text
+        let password = passwordField.text
+        
+        PFUser.logInWithUsernameInBackground(username, password: password) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                self.performSegueWithIdentifier("OpenSesame", sender: nil)
+            } else {
+                println("Failed to Sign Up")
+            }
+        }
+    }
 }
