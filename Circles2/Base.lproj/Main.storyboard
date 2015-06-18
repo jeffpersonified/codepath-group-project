@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="LVB-YS-i5n">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -89,31 +89,35 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <gestureRecognizers/>
                                         </imageView>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="plus" id="gOw-7V-KLQ">
+                                            <rect key="frame" x="148" y="24" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="STW-7M-9AF">
+                                            <rect key="frame" x="133" y="12" width="55" height="53"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <state key="normal">
+                                                <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="didPressNewTaskButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="1Ou-8P-VYq"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="STW-7M-9AF">
-                                <rect key="frame" x="149" y="519" width="23" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <state key="normal" image="plus">
-                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressNewTaskButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="1Ou-8P-VYq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="bubbleView" destination="lKU-aZ-HfB" id="zvP-oZ-uJx"/>
-                        <outlet property="circleView" destination="9dL-Xb-dmR" id="578-Vt-Cmf"/>
+                        <outlet property="bubbleView" destination="lKU-aZ-HfB" id="LpL-jY-r05"/>
+                        <outlet property="circleView" destination="9dL-Xb-dmR" id="Hqh-lU-exw"/>
                         <segue destination="DLc-J4-H5k" kind="custom" identifier="newTaskSegue" id="SvP-A9-Ran"/>
                     </connections>
                 </viewController>
@@ -134,7 +138,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="kBe-c8-RSS" appends="YES" id="Wm4-kX-OtF"/>
+                                    <outletCollection property="gestureRecognizers" destination="W5Z-RM-rSZ" appends="YES" id="B8z-ip-76b"/>
                                 </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter todo item" textAlignment="center" minimumFontSize="17" id="sag-hk-SsC">
@@ -178,9 +182,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RK-ii-07F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="kBe-c8-RSS">
+                <pinchGestureRecognizer id="W5Z-RM-rSZ">
                     <connections>
-                        <action selector="didPinchInputBubble:" destination="DLc-J4-H5k" id="94f-yU-BYY"/>
+                        <action selector="didScaleBubble:" destination="DLc-J4-H5k" id="vH7-hj-EJM"/>
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
