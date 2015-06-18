@@ -103,7 +103,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="kR7-Op-M2L"/>
+                                    <action selector="didPressNewTaskButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="1Ou-8P-VYq"/>
                                 </connections>
                             </button>
                         </subviews>

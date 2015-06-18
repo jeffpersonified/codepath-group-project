@@ -35,16 +35,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let scene = BubbleScene.unarchiveFromFile("BubbleScene") as? BubbleScene {
-            self.bubbleScene = scene
-            let skView = bubbleView as SKView
-            let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
-            
-            scene.size = screenSize
-            skView.showsNodeCount = true
-            skView.ignoresSiblingOrder = true
-            skView.presentScene(scene)
-        }
+        setTaskScene()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -73,7 +64,20 @@ class HomeViewController: UIViewController {
         }
     }
 
-    @IBAction func didTapButton(sender: AnyObject) {
+    @IBAction func didPressNewTaskButton(sender: AnyObject) {
         performSegueWithIdentifier("newTaskSegue", sender: nil)
+    }
+    
+    func setTaskScene() {
+        if let scene = BubbleScene.unarchiveFromFile("BubbleScene") as? BubbleScene {
+            self.bubbleScene = scene
+            let skView = bubbleView as SKView
+            let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
+            
+            scene.size = screenSize
+            skView.showsNodeCount = true
+            skView.ignoresSiblingOrder = true
+            skView.presentScene(scene)
+        }
     }
 }
