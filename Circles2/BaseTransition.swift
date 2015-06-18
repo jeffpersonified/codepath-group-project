@@ -1,9 +1,6 @@
 //
 //  BaseTransition.swift
-//  transitionDemo
-//
-//  Created by Timothy Lee on 2/22/15.
-//  Copyright (c) 2015 Timothy Lee. All rights reserved.
+//  Sutra, Copyright (c) 2015 codepath. All rights reserved.
 //
 
 import UIKit

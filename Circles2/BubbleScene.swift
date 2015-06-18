@@ -1,9 +1,6 @@
- //
-//  BubbleScene.swift
-//  Circles2
 //
-//  Created by Rebecca Goldman on 6/13/15.
-//  Copyright (c) 2015 codepath. All rights reserved.
+//  BubbleScene.swift
+//  Sutra, Copyright (c) 2015 codepath. All rights reserved.
 //
 
 import SpriteKit

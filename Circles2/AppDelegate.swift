@@ -1,9 +1,6 @@
 //
 //  AppDelegate.swift
-//  Circles2
-//
-//  Created by Rebecca Goldman on 6/13/15.
-//  Copyright (c) 2015 codepath. All rights reserved.
+//  Sutra, Copyright (c) 2015 codepath. All rights reserved.
 //
 
 import UIKit
