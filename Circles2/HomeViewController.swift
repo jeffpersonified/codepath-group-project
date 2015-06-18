@@ -1,10 +1,5 @@
 //
 //  HomeViewController.swift
-//  Circles2
-//
-//  Created by Rebecca Goldman on 6/13/15.
-//  Copyright (c) 2015 codepath. All rights reserved.
-//
 
 import UIKit
 import SpriteKit
@@ -25,65 +20,47 @@ extension SKNode {
     }
 }
 
-class HomeViewController: UIViewController {
 
-    
+//  This TableView class typing can be removed once tasks are no longer shown as
+//  table cells.
+
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     @IBOutlet var superView: UIView!
+    @IBOutlet weak var taskTableView: UITableView!
+    @IBOutlet weak var circleView: UIImageView!
+    @IBOutlet weak var bubbleView: SKView!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var taskLabel: UILabel!
+    
     var translate: CGAffineTransform!
     var scale: CGAffineTransform!
     var bubbleScene: BubbleScene!
-    @IBOutlet weak var circleView: UIImageView!
     var inputTransition: InputTransition!
-
-
-    @IBOutlet weak var bubbleView: SKView!
     var selectedImageView: UIImageView!
-    
     var size: CGSize!
+    var tasks: [PFObject]! = []
     
-    @IBOutlet weak var doneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let inputView = storyboard.instantiateViewControllerWithIdentifier("InputViewController") as! InputViewController
-
+        taskTableView.delegate = self
+        taskTableView.dataSource = self
 
         if let scene = BubbleScene.unarchiveFromFile("BubbleScene") as? BubbleScene {
-            // Configure the view.
             self.bubbleScene = scene
             let skView = bubbleView as SKView
-            println("\(circleView.frame.size)")
-        let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
-        scene.size = screenSize
-
+            let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
+            scene.size = screenSize
             skView.ignoresSiblingOrder = true
-            
-
             skView.presentScene(scene)
-
-            
         }
     }
 
     override func shouldAutorotate() -> Bool {
         return true
     }
-    
-    
-    
-    @IBAction func didTapButton(sender: AnyObject) {
-        
-        performSegueWithIdentifier("inputSegue", sender: self)
-        
-        println("\(circleView.frame.size)")
-        
-        
-        
-    }
-    
-    
-    
+
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
@@ -91,11 +68,11 @@ class HomeViewController: UIViewController {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -103,24 +80,24 @@ class HomeViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationViewController = segue.destinationViewController as! InputViewController
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-        
         inputTransition = InputTransition()
         destinationViewController.transitioningDelegate = inputTransition
-
-        
+    }
+    
+    @IBAction func didTapButton(sender: AnyObject) {
+        performSegueWithIdentifier("inputSegue", sender: self)
     }
 
-    
-    
-    @IBAction func didTap(sender: AnyObject) {
-        println("This is covering the other circle")
+    // These a table view functions are here for use while tasks are
+    // shown as table cells and not circles. They can be removed once
+    // tasks have been implemented as circles.
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("TaskCell") as! TaskCell
+        return cell
     }
-
-
-    
-    
-    
-    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count
+    }
 }
 
 

@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
             if user != nil {
                 self.performSegueWithIdentifier("OpenSesame", sender: nil)
             } else {
-                println("Failed to Sign Up")
+                println("Error: \(error)")
             }
         }
     }
