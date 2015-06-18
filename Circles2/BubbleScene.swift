@@ -48,7 +48,7 @@ class BubbleScene: SKScene {
     
     }
     
-    func addBubble(#size: CGSize, #string: String, #location: CGPoint) {  //also add text parameter: String
+    func addBubble(#size: CGSize, #string: String, #location: CGPoint) {
         
         let sprite = SKSpriteNode(imageNamed:"circle")
         sprite.size = CGSize(width: size.width, height: size.height)
@@ -63,7 +63,7 @@ class BubbleScene: SKScene {
 
         println("\(myLabel)")
         
-        var action = SKAction.scaleTo(0.8, duration: 1.8)
+        var action = SKAction.scaleTo(0.8, duration: 0.6)
         sprite.runAction(SKAction.repeatActionForever(action))
         
         

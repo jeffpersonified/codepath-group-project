@@ -30,30 +30,16 @@ class DoneTransition: BaseTransition {
         
         
         UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            
+            toViewController.view.alpha = 1
 
             self.inputViewController.inputBubbleView.alpha = 0
             self.homeViewController.bubbleScene.alpha = 1
 
-            
-            
             }, completion: { (Bool) -> Void in
                 
-                
-                
-                UIView.animateWithDuration(0.6
-                    , animations: { () -> Void in
-                        
-                        toViewController.view.alpha = 1
-                        
-                        
-                    }, completion: { (Bool) -> Void in
-                        
-                        
-                        self.finish()
-                        
-                })
-                
-                
+                self.finish()
+
         })
     }
    

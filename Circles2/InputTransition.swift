@@ -62,56 +62,84 @@ class InputTransition: BaseTransition {
     }
     
     override func dismissTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
+
+//        inputViewController.view.bounds = homeViewController.view.bounds
+        toViewController.view.alpha = 0
         
-//        inputViewController = fromViewController as! InputViewController
-//        homeViewController = toViewController as! HomeViewController
-        
-        inputViewController.view.bounds = homeViewController.view.bounds
-        
-        
-        if inputViewController.inputView == nil {
+        if inputViewController.cancelButton.alpha == 0.5 {
             
-        } else{
+            println("cancel transition is running")
+
+            UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                
+                
+                var scale = CGAffineTransformMakeScale(1, 1)
+                var translation = CGAffineTransformMakeTranslation(0, 0)
+                
+                self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
+            
+                }, completion: { (Bool) -> Void in
+                    
+                    UIView.animateWithDuration(0.6
+                        , animations: { () -> Void in
+                            
+                                                    toViewController.view.alpha = 1
+                            
+                            
+                        }, completion: { (Bool) -> Void in
+                            
+                            
+                            self.finish()
+                            
+                    })
+                    
+                    
+            })
+
+        
+        } else if inputViewController.doneButton.alpha == 0.5 {
+            
+            println("is this running?")
+            
+            var size = CGSize(width: inputViewController.inputBubbleView.frame.width, height:inputViewController.inputBubbleView.frame.width)
+            var string = inputViewController.inputField.text
+            var location = inputViewController.inputBubbleView.center
+            self.homeViewController.bubbleScene.addBubble(size: size, string: string, location: location)
+            
+            
+            UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                
+                self.inputViewController.inputBubbleView.alpha = 0
+                self.homeViewController.bubbleScene.alpha = 1
+                
+                
+                
+                }, completion: { (Bool) -> Void in
+                    
+                    
+                    
+                    UIView.animateWithDuration(0.6
+                        , animations: { () -> Void in
+                            
+                            toViewController.view.alpha = 1
+                            
+                            
+                        }, completion: { (Bool) -> Void in
+                            
+                            
+                            self.finish()
+                            
+                    })
+                    
+                    
+            })
+
+            
             
         }
         
-        toViewController.view.alpha = 0
-//        inputViewController.cancelButton.alpha = 0
-//        inputViewController.doneButton.alpha = 0
-
         
-        UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            
-            toViewController.view.alpha = 1
-
-            var scale = CGAffineTransformMakeScale(1, 1)
-            var translation = CGAffineTransformMakeTranslation(0, 0)
-            
-            self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
-            
-            
-            
-            
-            }, completion: { (Bool) -> Void in
-                
-                
-                
-                UIView.animateWithDuration(0.6
-                    , animations: { () -> Void in
-                        
-//                        toViewController.view.alpha = 1
-                        
-                        
-                    }, completion: { (Bool) -> Void in
-                        
-                        
-                        self.finish()
-                        
-                })
-                
-                
-        })
-    }
+           }
 
 
 }

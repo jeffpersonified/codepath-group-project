@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B0888E71B3109AE0093F76C /* CancelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0888E61B3109AE0093F76C /* CancelTransition.swift */; };
 		6B1B37841B30D82300DBD6F2 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B37831B30D82300DBD6F2 /* InputViewController.swift */; };
 		6B1B37861B30E01300DBD6F2 /* InputTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B37851B30E01300DBD6F2 /* InputTransition.swift */; };
 		6B75FFD61B312C92000A6FEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75FFD51B312C92000A6FEE /* LoginViewController.swift */; };
-		6B75FFD81B312D72000A6FEE /* DoneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75FFD71B312D72000A6FEE /* DoneTransition.swift */; };
 		6B75FFDB1B326920000A6FEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B75FFD91B326920000A6FEE /* Main.storyboard */; };
 		6BBD96E61B2CA6A200A12635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */; };
 		6BBD96E81B2CA6A200A12635 /* BubbleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD96E71B2CA6A200A12635 /* BubbleScene.sks */; };
@@ -38,11 +36,9 @@
 
 /* Begin PBXFileReference section */
 		3DFD80648FF24A6BA296F49A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		6B0888E61B3109AE0093F76C /* CancelTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelTransition.swift; sourceTree = "<group>"; };
 		6B1B37831B30D82300DBD6F2 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputViewController.swift; path = Circles2/InputViewController.swift; sourceTree = "<group>"; };
 		6B1B37851B30E01300DBD6F2 /* InputTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTransition.swift; path = Circles2/InputTransition.swift; sourceTree = "<group>"; };
 		6B75FFD51B312C92000A6FEE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Circles2/LoginViewController.swift; sourceTree = "<group>"; };
-		6B75FFD71B312D72000A6FEE /* DoneTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTransition.swift; sourceTree = "<group>"; };
 		6B75FFDA1B326920000A6FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6BBD96E01B2CA6A200A12635 /* Circles2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBD96E41B2CA6A200A12635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,8 +90,6 @@
 		6B75FFD31B312854000A6FEE /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				6B0888E61B3109AE0093F76C /* CancelTransition.swift */,
-				6B75FFD71B312D72000A6FEE /* DoneTransition.swift */,
 				6B1B37851B30E01300DBD6F2 /* InputTransition.swift */,
 				BB62F1531B3119E90024B890 /* BaseTransition.swift */,
 				BB62F1541B3119E90024B890 /* FadeTransition.swift */,
@@ -235,6 +229,7 @@
 				TargetAttributes = {
 					6BBD96DF1B2CA6A200A12635 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = C549AA26KS;
 					};
 					6BBD96F81B2CA6A200A12635 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -323,13 +318,11 @@
 			files = (
 				6B75FFD61B312C92000A6FEE /* LoginViewController.swift in Sources */,
 				6BBD96EA1B2CA6A200A12635 /* BubbleScene.swift in Sources */,
-				6B0888E71B3109AE0093F76C /* CancelTransition.swift in Sources */,
 				BB62F1551B3119E90024B890 /* BaseTransition.swift in Sources */,
 				6B1B37861B30E01300DBD6F2 /* InputTransition.swift in Sources */,
 				BB62F1561B3119E90024B890 /* FadeTransition.swift in Sources */,
 				6B1B37841B30D82300DBD6F2 /* InputViewController.swift in Sources */,
 				6BBD96EC1B2CA6A200A12635 /* HomeViewController.swift in Sources */,
-				6B75FFD81B312D72000A6FEE /* DoneTransition.swift in Sources */,
 				6BBD96E61B2CA6A200A12635 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,9 +452,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Circles2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Circles2/Circles2-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -473,9 +469,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Circles2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Circles2/Circles2-Bridging-Header.h";
 			};
 			name = Release;

@@ -14,11 +14,12 @@ class InputViewController: UIViewController {
     
     var image: UIImage!
     var bubbleScene: BubbleScene!
-    var cancelTransition: CancelTransition!
-    var doneTransition: DoneTransition!
-
+    var inputTransition: InputTransition!
+//    var sender: AnyObject!
+    
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    
     
     @IBOutlet weak var inputField: UITextField!
     override func viewDidLoad() {
@@ -29,9 +30,6 @@ class InputViewController: UIViewController {
 
         self.inputField.alpha = 0
 
-
-        // Do any additional setup after loading the view.
-        
         self.inputField.attributedPlaceholder = NSAttributedString(string:"Enter new todo item",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent((0.6))])
         
@@ -55,38 +53,30 @@ class InputViewController: UIViewController {
 
 
 //
-    @IBAction func didTapDone(sender: AnyObject) {
+    @IBAction func didTapDone(sender: UIButton) {
         
         println("Tapped Done")
-        dismissViewControllerAnimated(false, completion: nil)
-
-        //        performSegueWithIdentifier("doneSegue", sender: nil)
-        
-    }
-    
-    @IBAction func didTapCancel(sender: AnyObject) {
-        
-        println("Tapped Cancel")
-//        performSegueWithIdentifier("cancelSegue", sender: nil)
+        doneButton.alpha = 0.5
         dismissViewControllerAnimated(true, completion: nil)
         
     }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationViewController = segue.destinationViewController as! HomeViewController
-        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-        cancelTransition = CancelTransition()
-        destinationViewController.transitioningDelegate = cancelTransition
+    
+    @IBAction func didTapCancel(sender: UIButton) {
         
-////        
-//        if segue.identifier == "doneSegue" {
-//            doneTransition = DoneTransition()
-//            destinationViewController.transitioningDelegate = doneTransition
-//       
-//        }
-    
+        println("Tapped Cancel")
+        cancelButton.alpha = 0.5
+        dismissViewControllerAnimated(true, completion: nil)
+        
     }
-    
+//
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        var destinationViewController = segue.destinationViewController as! HomeViewController
+//        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+//        inputTransition = InputTransition()
+//        destinationViewController.transitioningDelegate = inputTransition
+//    
+//    }
+//    
     
     @IBAction func didPinchInputBubble(sender: UIPinchGestureRecognizer) {
 
@@ -101,27 +91,5 @@ class InputViewController: UIViewController {
 }
 
     
-    
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//        var destinationViewController = segue.destinationViewController as! HomeViewController
-//        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-//        
-//        cancelTransition = CancelTransition()
-//        destinationViewController.transitioningDelegate = CancelTransition
-//        
-//        
-//    }
-//
-//    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
 }
