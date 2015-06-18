@@ -21,7 +21,7 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // bubbleView & inputField alpha transition in InputTransition
+        // bubbleView scale & inputField alpha transition in InputTransition
         inputBubbleView.transform = CGAffineTransformMakeScale(1, 1)
         self.inputField.alpha = 0
         

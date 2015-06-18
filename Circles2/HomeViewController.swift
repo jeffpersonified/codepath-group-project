@@ -32,7 +32,6 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var bubbleView: SKView!
     @IBOutlet weak var circleView: UIImageView!
-    @IBOutlet weak var doneButton: UIButton!
 
     var bubbleScene: BubbleScene!
     var inputTransition: InputTransition!
