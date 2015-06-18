@@ -57,25 +57,32 @@ class InputTransition: BaseTransition {
         toViewController.view.alpha = 0
         
         // cancel transition
+        // undesirable behavior: dismiss transitions "flash" at end of animation
         if inputViewController.cancelButton.alpha == 0.5 {
             
             
-            UIView.animateWithDuration(0.24, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            UIView.animateWithDuration(0.34, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 
                 var scale = CGAffineTransformMakeScale(1, 1)
                 var translation = CGAffineTransformMakeTranslation(0, 0)
                 
+                self.inputViewController.cancelButton.alpha = 0
+                self.inputViewController.doneButton.alpha = 0
                 self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
                 
-                toViewController.view.alpha = 1
                 
                 
                 }, completion: { (Bool) -> Void in
                     
-                    UIView.animateWithDuration(0.6, animations: { () -> Void in
+                    UIView.animateWithDuration(0.8, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                         
-                        self.finish()
+                        toViewController.view.alpha = 1
                         
+                        
+                        }, completion: { (Bool) -> Void in
+                            
+                            self.finish()
+                            
                     })
                     
             })
@@ -99,13 +106,20 @@ class InputTransition: BaseTransition {
                 self.homeViewController.bubbleScene.alpha = 1
                 self.inputViewController.cancelButton.alpha = 0
                 self.inputViewController.doneButton.alpha = 0
-                toViewController.view.alpha = 1
                 
                 
                 }, completion: { (Bool) -> Void in
                     
-                    
-                    self.finish()
+                    UIView.animateWithDuration(0.24, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                        
+                        toViewController.view.alpha = 1
+                        
+                        
+                        }, completion: { (Bool) -> Void in
+                            
+                            self.finish()
+                            
+                    })
                     
             })
         }
