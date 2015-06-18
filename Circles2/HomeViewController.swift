@@ -23,51 +23,20 @@ extension SKNode {
 }
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var circleView: UIImageView!
+     
     @IBOutlet weak var bubbleView: SKView!
+    @IBOutlet weak var circleView: UIImageView!
     
-    var translate: CGAffineTransform!
-    var scale: CGAffineTransform!
     var bubbleScene: BubbleScene!
     var inputTransition: InputTransition!
-    var selectedImageView: UIImageView!
-    var size: CGSize!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTaskScene()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        var destinationViewController = segue.destinationViewController as! InputViewController
-        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-        inputTransition = InputTransition()
-        destinationViewController.transitioningDelegate = inputTransition
-    }
-
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-
-    override func supportedInterfaceOrientations() -> Int {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
-        } else {
-            return Int(UIInterfaceOrientationMask.All.rawValue)
-        }
-    }
-
-    @IBAction func didPressNewTaskButton(sender: AnyObject) {
-        performSegueWithIdentifier("newTaskSegue", sender: nil)
-    }
-    
+    // function to add BubbleScene to HomeViewController
     func setTaskScene() {
         if let scene = BubbleScene.unarchiveFromFile("BubbleScene") as? BubbleScene {
             self.bubbleScene = scene
@@ -80,4 +49,40 @@ class HomeViewController: UIViewController {
             skView.presentScene(scene)
         }
     }
+    
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        var destinationViewController = segue.destinationViewController as! InputViewController
+        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+        inputTransition = InputTransition()
+        destinationViewController.transitioningDelegate = inputTransition
+    }
+
+    @IBAction func didPressNewTaskButton(sender: AnyObject) {
+        performSegueWithIdentifier("newTaskSegue", sender: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+
+    override func supportedInterfaceOrientations() -> Int {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+        } else {
+            return Int(UIInterfaceOrientationMask.All.rawValue)
+        }
+    }
+
+
+    
+  
 }
