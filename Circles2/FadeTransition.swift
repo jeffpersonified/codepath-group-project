@@ -1,9 +1,6 @@
 //
 //  FadeTransition.swift
-//  transitionDemo
-//
-//  Created by Timothy Lee on 11/4/14.
-//  Copyright (c) 2014 Timothy Lee. All rights reserved.
+//  Sutra, Copyright (c) 2015 codepath. All rights reserved.
 //
 
 import UIKit
