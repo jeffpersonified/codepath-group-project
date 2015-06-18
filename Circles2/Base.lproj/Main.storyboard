@@ -138,7 +138,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="kBe-c8-RSS" appends="YES" id="Wm4-kX-OtF"/>
+                                    <outletCollection property="gestureRecognizers" destination="3RO-bc-f8e" appends="YES" id="neo-1h-Mca"/>
                                 </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter todo item" textAlignment="center" minimumFontSize="17" id="sag-hk-SsC">
@@ -182,9 +182,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RK-ii-07F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer id="kBe-c8-RSS">
+                <pinchGestureRecognizer id="3RO-bc-f8e">
                     <connections>
-                        <action selector="didPinchInputBubble:" destination="DLc-J4-H5k" id="94f-yU-BYY"/>
+                        <action selector="didScaleBubble:" destination="DLc-J4-H5k" id="bxm-MD-9Wv"/>
                     </connections>
                 </pinchGestureRecognizer>
             </objects>

@@ -72,19 +72,12 @@ class InputViewController: UIViewController {
         
     }
     
- // bug: scale is currently not working as planned
-    @IBAction func didPinchInputBubble(sender: UIPinchGestureRecognizer) {
+    @IBAction func didScaleBubble(sender: UIPinchGestureRecognizer) {
+        self.inputBubbleView.transform = CGAffineTransformScale(self.inputBubbleView.transform, sender.scale, sender.scale)
+        sender.scale = 1
         
-        
-        if sender.state == UIGestureRecognizerState.Changed {
-            
-            inputBubbleView.transform = CGAffineTransformMakeScale(sender.scale, sender.scale)
-            sender.scale = 3.7
-            
-        }
+    }
         
     }
     
     
-    
-}
