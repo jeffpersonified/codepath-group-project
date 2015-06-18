@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
     var size: CGSize!
     
     @IBOutlet weak var doneButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

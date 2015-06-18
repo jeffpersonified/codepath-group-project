@@ -51,17 +51,22 @@ class InputViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-
-//
     @IBAction func didTapDone(sender: AnyObject) {
+        let task = PFObject(className: "Task")
+        let user = PFUser.currentUser()!
+        task["content"] = inputField.text
+        task["author"] = user
+        task.ACL = PFACL(user: user)
         
-        println("Tapped Done")
-        dismissViewControllerAnimated(false, completion: nil)
-
-        //        performSegueWithIdentifier("doneSegue", sender: nil)
-        
+        task.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                self.dismissViewControllerAnimated(false, completion: nil)
+            } else {
+                println("Failed to save")
+            }
+        }
     }
     
     @IBAction func didTapCancel(sender: AnyObject) {
