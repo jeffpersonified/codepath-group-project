@@ -9,47 +9,41 @@
 import UIKit
 
 class InputViewController: UIViewController {
-
-    @IBOutlet weak var inputBubbleView: UIImageView!
     
-    var image: UIImage!
     var bubbleScene: BubbleScene!
     var inputTransition: InputTransition!
-//    var sender: AnyObject!
     
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    
-    
+    @IBOutlet weak var inputBubbleView: UIImageView!
     @IBOutlet weak var inputField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
+        // bubbleView & inputField alpha transition in InputTransition
         inputBubbleView.transform = CGAffineTransformMakeScale(1, 1)
-
         self.inputField.alpha = 0
-
+        
+        // programmatically set color and string of placeholder text
         self.inputField.attributedPlaceholder = NSAttributedString(string:"Enter new todo item",
             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent((0.6))])
-        
-        image = inputBubbleView.image
-
-
 
     }
-
+    
+    // bug: inputField is not responding as set. Why?
     override func viewDidAppear(animated: Bool) {
         inputField.isFirstResponder()
         inputField.userInteractionEnabled = true
-
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    // sets up Parse tracking when task is saved
     @IBAction func didTapDone(sender: AnyObject) {
         let task = PFObject(className: "Task")
         let user = PFUser.currentUser()!
@@ -66,37 +60,31 @@ class InputViewController: UIViewController {
                 println("Failed to save")
             }
         }
+        
+        
     }
     
+    // setting alpha of button as a hack to trigger correct transition basde on button alpha
     @IBAction func didTapCancel(sender: UIButton) {
         
-        println("Tapped Cancel")
         cancelButton.alpha = 0.5
         dismissViewControllerAnimated(true, completion: nil)
         
     }
-//
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        var destinationViewController = segue.destinationViewController as! HomeViewController
-//        destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-//        inputTransition = InputTransition()
-//        destinationViewController.transitioningDelegate = inputTransition
-//    
-//    }
-//    
     
+ // bug: scale is currently not working as planned
     @IBAction func didPinchInputBubble(sender: UIPinchGestureRecognizer) {
-
-    
+        
+        
         if sender.state == UIGestureRecognizerState.Changed {
             
             inputBubbleView.transform = CGAffineTransformMakeScale(sender.scale, sender.scale)
+            sender.scale = 3.7
             
-            println("scale \(sender.scale)")
         }
-
-}
-
+        
+    }
     
- 
+    
+    
 }

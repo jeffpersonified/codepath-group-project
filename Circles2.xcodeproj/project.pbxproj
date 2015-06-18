@@ -18,7 +18,6 @@
 		6BBD96F11B2CA6A200A12635 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD96F01B2CA6A200A12635 /* Images.xcassets */; };
 		6BBD96F41B2CA6A200A12635 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD96F21B2CA6A200A12635 /* LaunchScreen.xib */; };
 		6BBD97001B2CA6A200A12635 /* Circles2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD96FF1B2CA6A200A12635 /* Circles2Tests.swift */; };
-		6BBD970C1B2CAA2400A12635 /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD970B1B2CAA2400A12635 /* Shader1.fsh */; };
 		7F30BF2E0CB7B826FB6A3BD9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCBCA05CDA00A8F25A7F55F1 /* libPods.a */; };
 		BB62F1551B3119E90024B890 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62F1531B3119E90024B890 /* BaseTransition.swift */; };
 		BB62F1561B3119E90024B890 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62F1541B3119E90024B890 /* FadeTransition.swift */; };
@@ -51,7 +50,6 @@
 		6BBD96F91B2CA6A200A12635 /* Circles2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Circles2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBD96FE1B2CA6A200A12635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BBD96FF1B2CA6A200A12635 /* Circles2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circles2Tests.swift; sourceTree = "<group>"; };
-		6BBD970B1B2CAA2400A12635 /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader1.fsh; path = Circles2.xcodeproj/../Shader1.fsh; sourceTree = SOURCE_ROOT; };
 		BB62F1531B3119E90024B890 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTransition.swift; path = Circles2/BaseTransition.swift; sourceTree = "<group>"; };
 		BB62F1541B3119E90024B890 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FadeTransition.swift; path = Circles2/FadeTransition.swift; sourceTree = "<group>"; };
 		BB62F1571B3124B90024B890 /* Circles2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Circles2-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */,
-				6BBD970B1B2CAA2400A12635 /* Shader1.fsh */,
 				6BBD96E71B2CA6A200A12635 /* BubbleScene.sks */,
 				6BBD96E91B2CA6A200A12635 /* BubbleScene.swift */,
 				6BBD96F01B2CA6A200A12635 /* Images.xcassets */,
@@ -265,7 +262,6 @@
 				6B75FFDB1B326920000A6FEE /* Main.storyboard in Resources */,
 				6BBD96F11B2CA6A200A12635 /* Images.xcassets in Resources */,
 				6BBD96E81B2CA6A200A12635 /* BubbleScene.sks in Resources */,
-				6BBD970C1B2CAA2400A12635 /* Shader1.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
