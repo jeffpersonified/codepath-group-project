@@ -40,18 +40,15 @@ class BubbleScene: SKScene {
     for touch: AnyObject in touches{
     let location = touch.locationInNode(self)
     let sprite = self.nodeAtPoint(location)
-
-    if self.nodeAtPoint(location) == sprite {
         var currentPoint:CGPoint! = touch.locationInNode(self)
         var previousPoint:CGPoint! = touch.previousLocationInNode(self)
         sprite.position = CGPointMake(currentPoint.x - previousPoint.x, currentPoint.y - previousPoint.y)
 
     }
-    }
+    
     }
     
     func addBubble(#size: CGSize, #string: String, #location: CGPoint) {  //also add text parameter: String
-
         
         let sprite = SKSpriteNode(imageNamed:"circle")
         sprite.size = CGSize(width: size.width, height: size.height)
@@ -61,25 +58,27 @@ class BubbleScene: SKScene {
         
         myLabel = SKLabelNode(fontNamed: "Arial")
         myLabel.fontColor = UIColor.whiteColor()
-        myLabel.text = string 
+        myLabel.text = string
         myLabel.fontSize = 17
-        
-        sprite.addChild(myLabel)
+
         println("\(myLabel)")
         
-        let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-        
+        var action = SKAction.scaleTo(0.8, duration: 1.8)
         sprite.runAction(SKAction.repeatActionForever(action))
+        
         
         sprite.physicsBody = SKPhysicsBody(circleOfRadius:sprite.size.width/2)
         sprite.physicsBody!.dynamic = true
         
         self.addChild(sprite)
-        
-        
+        sprite.addChild(myLabel)
+
     }
    
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
     }
+    
+    
+
+    
 }

@@ -45,17 +45,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let inputView = storyboard.instantiateViewControllerWithIdentifier("InputViewController") as! InputViewController
-
 
         if let scene = BubbleScene.unarchiveFromFile("BubbleScene") as? BubbleScene {
-            // Configure the view.
             self.bubbleScene = scene
             let skView = bubbleView as SKView
             println("\(circleView.frame.size)")
-        let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
-        scene.size = screenSize
+            let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
+            scene.size = screenSize
+
+            skView.showsNodeCount = true
 
             skView.ignoresSiblingOrder = true
             
@@ -74,10 +72,9 @@ class HomeViewController: UIViewController {
     
     @IBAction func didTapButton(sender: AnyObject) {
         
-        performSegueWithIdentifier("inputSegue", sender: self)
         
         println("\(circleView.frame.size)")
-        
+        performSegueWithIdentifier("inputSegue2", sender: nil)
         
         
     }

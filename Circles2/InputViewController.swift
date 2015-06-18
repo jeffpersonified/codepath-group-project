@@ -58,14 +58,17 @@ class InputViewController: UIViewController {
     @IBAction func didTapDone(sender: AnyObject) {
         
         println("Tapped Done")
-        performSegueWithIdentifier("doneSegue", sender: nil)
+        dismissViewControllerAnimated(false, completion: nil)
+
+        //        performSegueWithIdentifier("doneSegue", sender: nil)
         
     }
     
     @IBAction func didTapCancel(sender: AnyObject) {
         
         println("Tapped Cancel")
-        performSegueWithIdentifier("cancelSegue", sender: nil)
+//        performSegueWithIdentifier("cancelSegue", sender: nil)
+        dismissViewControllerAnimated(true, completion: nil)
         
     }
 
@@ -75,12 +78,12 @@ class InputViewController: UIViewController {
         cancelTransition = CancelTransition()
         destinationViewController.transitioningDelegate = cancelTransition
         
-//        
-        if segue.identifier == "doneSegue" {
-            doneTransition = DoneTransition()
-            destinationViewController.transitioningDelegate = doneTransition
-       
-        }
+////        
+//        if segue.identifier == "doneSegue" {
+//            doneTransition = DoneTransition()
+//            destinationViewController.transitioningDelegate = doneTransition
+//       
+//        }
     
     }
     

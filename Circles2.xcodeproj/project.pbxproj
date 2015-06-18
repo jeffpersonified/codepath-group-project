@@ -12,11 +12,11 @@
 		6B1B37861B30E01300DBD6F2 /* InputTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B37851B30E01300DBD6F2 /* InputTransition.swift */; };
 		6B75FFD61B312C92000A6FEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75FFD51B312C92000A6FEE /* LoginViewController.swift */; };
 		6B75FFD81B312D72000A6FEE /* DoneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75FFD71B312D72000A6FEE /* DoneTransition.swift */; };
+		6B75FFDB1B326920000A6FEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B75FFD91B326920000A6FEE /* Main.storyboard */; };
 		6BBD96E61B2CA6A200A12635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */; };
 		6BBD96E81B2CA6A200A12635 /* BubbleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD96E71B2CA6A200A12635 /* BubbleScene.sks */; };
 		6BBD96EA1B2CA6A200A12635 /* BubbleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD96E91B2CA6A200A12635 /* BubbleScene.swift */; };
 		6BBD96EC1B2CA6A200A12635 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD96EB1B2CA6A200A12635 /* HomeViewController.swift */; };
-		6BBD96EF1B2CA6A200A12635 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD96ED1B2CA6A200A12635 /* Main.storyboard */; };
 		6BBD96F11B2CA6A200A12635 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD96F01B2CA6A200A12635 /* Images.xcassets */; };
 		6BBD96F41B2CA6A200A12635 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD96F21B2CA6A200A12635 /* LaunchScreen.xib */; };
 		6BBD97001B2CA6A200A12635 /* Circles2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD96FF1B2CA6A200A12635 /* Circles2Tests.swift */; };
@@ -43,13 +43,13 @@
 		6B1B37851B30E01300DBD6F2 /* InputTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTransition.swift; path = Circles2/InputTransition.swift; sourceTree = "<group>"; };
 		6B75FFD51B312C92000A6FEE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Circles2/LoginViewController.swift; sourceTree = "<group>"; };
 		6B75FFD71B312D72000A6FEE /* DoneTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTransition.swift; sourceTree = "<group>"; };
+		6B75FFDA1B326920000A6FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6BBD96E01B2CA6A200A12635 /* Circles2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBD96E41B2CA6A200A12635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BBD96E71B2CA6A200A12635 /* BubbleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BubbleScene.sks; sourceTree = "<group>"; };
 		6BBD96E91B2CA6A200A12635 /* BubbleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleScene.swift; sourceTree = "<group>"; };
 		6BBD96EB1B2CA6A200A12635 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Circles2/HomeViewController.swift; sourceTree = "<group>"; };
-		6BBD96EE1B2CA6A200A12635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6BBD96F01B2CA6A200A12635 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6BBD96F31B2CA6A200A12635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6BBD96F91B2CA6A200A12635 /* Circles2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Circles2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,8 +142,8 @@
 				6BBD970B1B2CAA2400A12635 /* Shader1.fsh */,
 				6BBD96E71B2CA6A200A12635 /* BubbleScene.sks */,
 				6BBD96E91B2CA6A200A12635 /* BubbleScene.swift */,
-				6BBD96ED1B2CA6A200A12635 /* Main.storyboard */,
 				6BBD96F01B2CA6A200A12635 /* Images.xcassets */,
+				6B75FFD91B326920000A6FEE /* Main.storyboard */,
 				6BBD96F21B2CA6A200A12635 /* LaunchScreen.xib */,
 				6BBD96E31B2CA6A200A12635 /* Supporting Files */,
 				BB62F1571B3124B90024B890 /* Circles2-Bridging-Header.h */,
@@ -267,9 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BBD96F41B2CA6A200A12635 /* LaunchScreen.xib in Resources */,
+				6B75FFDB1B326920000A6FEE /* Main.storyboard in Resources */,
 				6BBD96F11B2CA6A200A12635 /* Images.xcassets in Resources */,
 				6BBD96E81B2CA6A200A12635 /* BubbleScene.sks in Resources */,
-				6BBD96EF1B2CA6A200A12635 /* Main.storyboard in Resources */,
 				6BBD970C1B2CAA2400A12635 /* Shader1.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,10 +353,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6BBD96ED1B2CA6A200A12635 /* Main.storyboard */ = {
+		6B75FFD91B326920000A6FEE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6BBD96EE1B2CA6A200A12635 /* Base */,
+				6B75FFDA1B326920000A6FEE /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

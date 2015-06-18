@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dYV-e7-dy7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="LVB-YS-i5n">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -83,15 +83,17 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fKZ-41-8vJ">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="circle" id="9dL-Xb-dmR">
+                                            <rect key="frame" x="129" y="3" width="63" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <gestureRecognizers/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="circle" id="9dL-Xb-dmR">
-                                <rect key="frame" x="129" y="497" width="63" height="66"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <gestureRecognizers/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="STW-7M-9AF">
                                 <rect key="frame" x="149" y="519" width="23" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,7 +104,6 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="kR7-Op-M2L"/>
-                                    <segue destination="DLc-J4-H5k" kind="custom" identifier="inputSegue" id="4ih-0o-RhR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,6 +114,7 @@
                     <connections>
                         <outlet property="bubbleView" destination="lKU-aZ-HfB" id="zvP-oZ-uJx"/>
                         <outlet property="circleView" destination="9dL-Xb-dmR" id="578-Vt-Cmf"/>
+                        <segue destination="DLc-J4-H5k" kind="custom" identifier="inputSegue2" id="SvP-A9-Ran"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
@@ -152,7 +154,6 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapCancel:" destination="DLc-J4-H5k" eventType="touchUpInside" id="SkG-g2-Gwy"/>
-                                    <segue destination="LVB-YS-i5n" kind="custom" identifier="cancelSegue" id="teK-QN-tob"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1eY-K3-uga">
@@ -163,7 +164,6 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapDone:" destination="DLc-J4-H5k" eventType="touchUpInside" id="8ka-Vg-S5W"/>
-                                    <segue destination="LVB-YS-i5n" kind="custom" identifier="doneSegue" id="a2F-js-kxc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -181,7 +181,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="429" y="448"/>
+            <point key="canvasLocation" x="437" y="458"/>
         </scene>
     </scenes>
     <resources>
@@ -193,7 +193,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="teK-QN-tob"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -36,7 +36,7 @@ class CancelTransition: BaseTransition {
 //                    self.inputViewController.doneButton.alpha = 0
 
                     
-                    
+
                     
                     }, completion: { (Bool) -> Void in
                         
