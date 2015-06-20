@@ -13,18 +13,28 @@
     var myLabel:SKLabelNode!
     var initialCenter: CGPoint!
     var sprite: SKSpriteNode!
-    var containerNode: SKNode!
-    var selectedNode: SKNode!
-    var containerTouch: UITouch!
+    var array = [0, 1, 2, 3, 4, 5, 6]
+    var spriteArray: [SKSpriteNode] = [SKSpriteNode]()
+    var panRecognizer: UIPanGestureRecognizer!
+    var circle: UIImageView!
+    var spriteView: SKView!
+    var start: CGPoint!
+    var end: CGPoint!
+    
     var touchLocation: CGPoint!
+    var touchedNode: SKNode!
+    var touch: UITouch!
+    
     
     override func didMoveToView(view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
-        var panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("move:"))
-        self.view?.addGestureRecognizer(panRecognizer)
-
+        panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("move:"))
+        
+        // need to attach this gestureRecognizer to sprite, not view. Unsure how.
+        view.addGestureRecognizer(panRecognizer)
         
     }
+    
     
     
     // this function takes size/string/location parameters passed in the InputTransition
@@ -32,7 +42,7 @@
     func addBubble(#size: CGSize, #string: String, #location: CGPoint) {
         // ignore the error stating extraneous #
         
-        // set a sprite with the image named "cicle"
+        // set a sprite with the image named "circle"
         sprite = SKSpriteNode(imageNamed:"circle")
         
         // set the sprite's size to the "size" parameter passed in InputTransition
@@ -56,63 +66,61 @@
         
         // specifying that the sprite is a circle that reacts with other sprites
         // with some physics
-        sprite.physicsBody = SKPhysicsBody(circleOfRadius:sprite.size.width/2.4)
+        sprite.physicsBody = SKPhysicsBody(circleOfRadius:sprite.size.width/2)
         sprite.physicsBody!.dynamic = true
         sprite.userInteractionEnabled = true
-
+        sprite.name = "task"
+        
+        
         // add sprite to view & then add string to the sprite
-        self.addChild(sprite)
         sprite.addChild(myLabel)
-
-
+        
+        self.addChild(sprite)
+        
+        // add all sprites to an array of sprites
+        spriteArray.append(sprite)
         
     }
     
- 
-    func move(sender: UIPanGestureRecognizer){
+    
+    func move(sender: UIPanGestureRecognizer) {
         
         var translation = sender.translationInView(view!)
         
-        if sender.state == UIGestureRecognizerState.Began {
-        
+        // attempt to move selected sprite
+        for sprite in spriteArray {
             
-            initialCenter = sprite.position
-            
-            println("initial center: \(initialCenter)")
-        } else if sender.state == UIGestureRecognizerState.Changed {
-            
-             sprite.position = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y - translation.y)
-
-            println("sprite position changed to: \(sprite.position)")
-
-        } else if sender.state == UIGestureRecognizerState.Ended {
-            println("ended at: \(sprite.position)")
-
-            
-                    }
+            if sender.state == UIGestureRecognizerState.Began {
+                
+                self.initialCenter = self.sprite.position
+                
+                println("initial center: \(self.initialCenter)")
+            } else if sender.state == UIGestureRecognizerState.Changed {
+                
+                self.sprite.position = CGPoint(x: self.initialCenter.x + translation.x, y: self.self.initialCenter.y - translation.y)
+                
+                println("sprite position changed to: \(self.sprite.position)")
+                
+            } else if sender.state == UIGestureRecognizerState.Ended {
+                println("ended at: \(self.sprite.position)")
+                
+                
+            }
+        }
     }
     
     
-//    func onCustomPan(sender: UIPanGestureRecognizer) {
-//        var point = sender.locationInView(view)
-//        var velocity = sender.velocityInView(view)
-//        var translation = sender.translationInView(view!)
-//
-//        touchLocation = sender.locationInView(sender.view)
-//        touchLocation = self.convertPointFromView(touchLocation)
-//        selectedNode.position = CGPointMake(touchLocation.x, touchLocation.y);
-//        
-//        if panGestureRecognizer.state == UIGestureRecognizerState.Began {
-//            initialCenter = sprite.position
-//            println("Gesture began at: \(point)")
-//        } else if panGestureRecognizer.state == UIGestureRecognizerState.Changed {
-//            
-//            sprite.position = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
-//            println("Gesture changed at: \(point)")
-//        } else if panGestureRecognizer.state == UIGestureRecognizerState.Ended {
-//            println("Gesture ended at: \(point)")
-//        }
-//    }
+    //    override func touchesBegan(touches: Set<NSObject>,
+    //        withEvent event: UIEvent?) {
+    //                for touch in (touches as! Set<UITouch>) {
+    //                    touchLocation = touch.locationInNode(self)
+    //                    touchedNode = nodeAtPoint(touchLocation)
+    //                    println("touched node: \(touchedNode)")
+    //                }
+    //    }
+    //
     
     
  }
+ 
+  
