@@ -102,7 +102,6 @@ class InputTransition: BaseTransition {
             
             UIView.animateWithDuration(0.02, animations: { () -> Void in
                 
-                self.inputViewController.inputBubbleView.transform = CGAffineTransform
                 self.inputViewController.inputBubbleView.alpha = 0
                 self.homeViewController.bubbleScene.alpha = 1
                 self.inputViewController.cancelButton.alpha = 0

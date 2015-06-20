@@ -13,17 +13,9 @@
     var myLabel:SKLabelNode!
     var initialCenter: CGPoint!
     var sprite: SKSpriteNode!
-    var array = [0, 1, 2, 3, 4, 5, 6]
-    var spriteArray: [SKSpriteNode] = [SKSpriteNode]()
     var panRecognizer: UIPanGestureRecognizer!
-    var circle: UIImageView!
-    var spriteView: SKView!
-    var start: CGPoint!
-    var end: CGPoint!
-    
-    var touchLocation: CGPoint!
+
     var touchedNode: SKNode!
-    var touch: UITouch!
     
     
     override func didMoveToView(view: SKView) {
@@ -36,7 +28,7 @@
     }
     
     
-    
+    var i : Int = 0
     // this function takes size/string/location parameters passed in the InputTransition
     // and adds a new sprite to the Scene based on those parameters
     func addBubble(#size: CGSize, #string: String, #location: CGPoint) {
@@ -69,16 +61,15 @@
         sprite.physicsBody = SKPhysicsBody(circleOfRadius:sprite.size.width/2)
         sprite.physicsBody!.dynamic = true
         sprite.userInteractionEnabled = true
-        sprite.name = "task"
         
+        // name tasks "task" + incrementally increasing number
+        sprite.name = "task \(i)"
+        i++
         
         // add sprite to view & then add string to the sprite
         sprite.addChild(myLabel)
         
         self.addChild(sprite)
-        
-        // add all sprites to an array of sprites
-        spriteArray.append(sprite)
         
     }
     
@@ -86,39 +77,40 @@
     func move(sender: UIPanGestureRecognizer) {
         
         var translation = sender.translationInView(view!)
+        var location = sender.locationInView(view!)
         
-        // attempt to move selected sprite
-        for sprite in spriteArray {
-            
+        // flip coordinate system so it has same coordinate system as typical ViewController
+        location.y = self.view!.frame.size.height - location.y
+
             if sender.state == UIGestureRecognizerState.Began {
                 
-                self.initialCenter = self.sprite.position
+                // set nodes = to the node at the touched location
+                var nodes = nodesAtPoint(location)
+                println("nodesAtPoint \(nodes)")
+
+                // assign the first touched node to "touchedNode"
+                touchedNode = nodes.first as? SKNode
                 
-                println("initial center: \(self.initialCenter)")
+                // set the initial center to the position of the touched node
+                initialCenter = touchedNode?.position
+                
+                println("touchedNode: \(touchedNode)")
+                println("initialCenter: \(initialCenter)")
+                
+    
             } else if sender.state == UIGestureRecognizerState.Changed {
                 
-                self.sprite.position = CGPoint(x: self.initialCenter.x + translation.x, y: self.self.initialCenter.y - translation.y)
+                if initialCenter != nil {
+                    touchedNode.position = CGPoint(x: self.initialCenter.x + translation.x, y: self.initialCenter.y - translation.y)
+                }
                 
-                println("sprite position changed to: \(self.sprite.position)")
                 
             } else if sender.state == UIGestureRecognizerState.Ended {
-                println("ended at: \(self.sprite.position)")
-                
-                
+                touchedNode = nil
             }
-        }
     }
     
-    
-    //    override func touchesBegan(touches: Set<NSObject>,
-    //        withEvent event: UIEvent?) {
-    //                for touch in (touches as! Set<UITouch>) {
-    //                    touchLocation = touch.locationInNode(self)
-    //                    touchedNode = nodeAtPoint(touchLocation)
-    //                    println("touched node: \(touchedNode)")
-    //                }
-    //    }
-    //
+
     
     
  }
