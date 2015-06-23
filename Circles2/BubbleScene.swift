@@ -32,15 +32,19 @@
         updateTaskBubbleLabel(string)
 
         // this is where we can make the sprite do cool things
-        var action = SKAction.scaleTo(0.8, duration: 0.6)
+        var action = SKAction.scaleTo(1.0, duration: 0.6)
         taskBubble.runAction(SKAction.repeatActionForever(action))
-        taskBubble.physicsBody?.mass = 0
+        taskBubble.physicsBody?.mass = -10
         
         // specifying that the sprite is a circle that reacts with other sprites
         // with some physics
         taskBubble.physicsBody = SKPhysicsBody(circleOfRadius: taskBubble.size.width/2)
         taskBubble.physicsBody!.dynamic = true
         taskBubble.userInteractionEnabled = true
+        taskBubble.physicsBody!.allowsRotation = false
+        taskBubble.physicsBody?.restitution = 0.2
+        taskBubble.physicsBody?.angularDamping = 0.8
+
         
         // name tasks "task" + incrementally increasing number
         taskBubble.name = "task \(i)"
@@ -49,6 +53,7 @@
         // add sprite to view & then add string to the sprite
         taskBubble.addChild(taskBubbleLabel)
         self.addChild(taskBubble)
+
     }
     
     func move(bubble: UIPanGestureRecognizer) {
@@ -79,7 +84,7 @@
         taskBubble.size = CGSize(width: size.width, height: size.height)
         taskBubble.xScale = 1.0
         taskBubble.yScale = 1.0
-        taskBubble.position = location
+        taskBubble.position = CGPoint(x: location.x, y: location.y - 100)
         // due to gravity, sprite automatically falls to bottom of screen
     }
     

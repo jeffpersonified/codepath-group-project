@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="LVB-YS-i5n">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -116,8 +116,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="addTaskView" destination="fKZ-41-8vJ" id="bT8-3T-EXS"/>
                         <outlet property="bubbleView" destination="lKU-aZ-HfB" id="LpL-jY-r05"/>
-                        <outlet property="circleView" destination="9dL-Xb-dmR" id="Hqh-lU-exw"/>
+                        <outlet property="dividerView" destination="1Sp-Dz-wDg" id="kGH-oB-Dj0"/>
+                        <outlet property="tabView" destination="QrT-ad-AVP" id="ulX-ME-QLT"/>
                         <segue destination="DLc-J4-H5k" kind="custom" identifier="newTaskSegue" id="SvP-A9-Ran"/>
                     </connections>
                 </viewController>

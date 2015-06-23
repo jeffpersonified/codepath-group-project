@@ -23,10 +23,11 @@ extension SKNode {
 }
 
 class HomeViewController: UIViewController {
-     
-    @IBOutlet weak var bubbleView: SKView!
-    @IBOutlet weak var circleView: UIImageView!
     
+    @IBOutlet weak var dividerView: UIImageView!
+    @IBOutlet weak var bubbleView: SKView!
+    @IBOutlet weak var addTaskView: UIView!
+    @IBOutlet weak var tabView: UIVisualEffectView!
     var bubbleScene: BubbleScene!
     var inputTransition: InputTransition!
     
