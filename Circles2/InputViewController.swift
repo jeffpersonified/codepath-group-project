@@ -59,13 +59,10 @@ class InputViewController: UIViewController {
                 println("Failed to save")
             }
         }
-        
-        
     }
     
     // setting alpha of button as a hack to trigger correct transition based on button alpha
     @IBAction func didTapCancel(sender: UIButton) {
-        
         cancelButton.alpha = 0.5
         dismissViewControllerAnimated(true, completion: nil)
         

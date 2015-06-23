@@ -33,11 +33,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTaskScene()
+        addBubbleToHomeView()
     }
-    
-    // function to add BubbleScene to HomeViewController
-    func setTaskScene() {
+
+    func addBubbleToHomeView() {
         if let scene = BubbleScene.unarchiveFromFile("BubbleScene") as? BubbleScene {
             self.bubbleScene = scene
             let skView = bubbleView as SKView
@@ -49,17 +48,12 @@ class HomeViewController: UIViewController {
             skView.presentScene(scene)
         }
     }
-    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationViewController = segue.destinationViewController as! InputViewController
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
         inputTransition = InputTransition()
         destinationViewController.transitioningDelegate = inputTransition
-    }
-
-    @IBAction func didPressNewTaskButton(sender: AnyObject) {
-        performSegueWithIdentifier("newTaskSegue", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,8 +75,8 @@ class HomeViewController: UIViewController {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
     }
-
-
     
-  
+    @IBAction func didPressNewTaskButton(sender: AnyObject) {
+        performSegueWithIdentifier("newTaskSegue", sender: nil)
+    }
 }
