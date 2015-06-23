@@ -24,8 +24,6 @@
         setDoubleTapRecognizer()
     }
     
-    // this function takes size/string/location parameters passed in the InputTransition
-    // and adds a new sprite to the Scene based on those parameters
     func addTaskBubble(#size: CGSize, #string: String, #location: CGPoint) {
         taskBubble = SKSpriteNode(imageNamed: "circle")
         addTaskBubbleToScene(size, location: location)
@@ -52,7 +50,6 @@
     }
     
     func move(bubble: UIPanGestureRecognizer) {
-        
         var translation = bubble.translationInView(view!)
         var location = bubble.locationInView(view!)
         

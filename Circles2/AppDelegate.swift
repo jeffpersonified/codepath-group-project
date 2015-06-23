@@ -9,15 +9,9 @@ import UIKit
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
         Parse.setApplicationId("xNVQUmAEjl7mhSdKMnPDap57eCA4sAwD298T3WGs", clientKey: "wdCabiTEXKZlKJgsGfDyREz7NH1mt41XKySBXgIo");
-
         return true
-        
-    
-        
     }
 
     func applicationWillResignActive(application: UIApplication) {
