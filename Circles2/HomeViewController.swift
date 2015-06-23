@@ -29,7 +29,6 @@ class HomeViewController: UIViewController {
     
     var bubbleScene: BubbleScene!
     var inputTransition: InputTransition!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
