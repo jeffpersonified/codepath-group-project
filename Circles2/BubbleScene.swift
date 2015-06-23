@@ -14,15 +14,18 @@
     var initialCenter: CGPoint!
     var sprite: SKSpriteNode!
     var panRecognizer: UIPanGestureRecognizer!
-
+    var doubleTapRecognizer: UITapGestureRecognizer!
     var touchedNode: SKNode!
-    
     
     override func didMoveToView(view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+        
         panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("move:"))
         view.addGestureRecognizer(panRecognizer)
         
+        doubleTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("didDoubleTap:"))
+        doubleTapRecognizer.numberOfTapsRequired = 2
+        view.addGestureRecognizer(doubleTapRecognizer)
     }
 
     var i : Int = 0
@@ -65,36 +68,32 @@
         self.addChild(sprite)
     }
     
-    func move(sender: UIPanGestureRecognizer) {
+    func move(bubble: UIPanGestureRecognizer) {
         
-        var translation = sender.translationInView(view!)
-        var location = sender.locationInView(view!)
+        var translation = bubble.translationInView(view!)
+        var location = bubble.locationInView(view!)
         
         // flip coordinate system so it has same coordinate system as typical ViewController
         location.y = self.view!.frame.size.height - location.y
 
-        if sender.state == UIGestureRecognizerState.Began {
-            
+        if bubble.state == UIGestureRecognizerState.Began {
             // set nodes = to the node at the touched location
             var nodes = nodesAtPoint(location)
-            println("nodesAtPoint \(nodes)")
-
             // assign the first touched node to "touchedNode"
             touchedNode = nodes.first as? SKNode
-            
             // set the initial center to the position of the touched node
             initialCenter = touchedNode?.position
-            
-            println("touchedNode: \(touchedNode)")
-            println("initialCenter: \(initialCenter)")
-            
-        } else if sender.state == UIGestureRecognizerState.Changed {
+        } else if bubble.state == UIGestureRecognizerState.Changed {
             if initialCenter != nil {
                 touchedNode.position = CGPoint(x: self.initialCenter.x + translation.x, y: self.initialCenter.y - translation.y)
             }
-        } else if sender.state == UIGestureRecognizerState.Ended {
+        } else if bubble.state == UIGestureRecognizerState.Ended {
             touchedNode = nil
         }
+    }
+    
+    func didDoubleTap(bubble: UITapGestureRecognizer) {
+        println("Double Tapped")
     }
 }
  
