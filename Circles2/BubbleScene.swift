@@ -10,7 +10,7 @@
  
  class BubbleScene: SKScene {
     
-    var myLabel:SKLabelNode!
+    var taskBubbleLabel:SKLabelNode!
     var initialCenter: CGPoint!
     var taskBubble: SKSpriteNode!
     var panRecognizer: UIPanGestureRecognizer!
@@ -47,7 +47,7 @@
         i++
         
         // add sprite to view & then add string to the sprite
-        taskBubble.addChild(myLabel)
+        taskBubble.addChild(taskBubbleLabel)
         self.addChild(taskBubble)
     }
     
@@ -84,10 +84,10 @@
     }
     
     func updateTaskBubbleLabel(label: String) {
-        myLabel = SKLabelNode(fontNamed: "Helvetica Neue")
-        myLabel.fontColor = UIColor.whiteColor()
-        myLabel.text = label
-        myLabel.fontSize = 17
+        taskBubbleLabel = SKLabelNode(fontNamed: "Helvetica Neue")
+        taskBubbleLabel.fontColor = UIColor.whiteColor()
+        taskBubbleLabel.text = label
+        taskBubbleLabel.fontSize = 17
     }
 
     func setPanRecognizer() {
