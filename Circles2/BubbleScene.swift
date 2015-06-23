@@ -16,7 +16,7 @@
     var panRecognizer: UIPanGestureRecognizer!
     var doubleTapRecognizer: UITapGestureRecognizer!
     var touchedNode: SKNode!
-    var i : Int = 0
+    var i: Int = 0
     
     override func didMoveToView(view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
@@ -77,7 +77,6 @@
         taskBubble.xScale = 1.0
         taskBubble.yScale = 1.0
         taskBubble.position = location
-        // due to gravity, sprite automatically falls to bottom of screen
     }
     
     func updateTaskBubbleLabel(label: String) {
