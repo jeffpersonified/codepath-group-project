@@ -16,7 +16,7 @@
     var panRecognizer: UIPanGestureRecognizer!
     var doubleTapRecognizer: UITapGestureRecognizer!
     var touchedNode: SKNode!
-    var i : Int = 0
+    var i: Int = 0
     
     override func didMoveToView(view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
@@ -24,8 +24,6 @@
         setDoubleTapRecognizer()
     }
     
-    // this function takes size/string/location parameters passed in the InputTransition
-    // and adds a new sprite to the Scene based on those parameters
     func addTaskBubble(#size: CGSize, #string: String, #location: CGPoint) {
         taskBubble = SKSpriteNode(imageNamed: "circle")
         addTaskBubbleToScene(size, location: location)
@@ -57,7 +55,6 @@
     }
     
     func move(bubble: UIPanGestureRecognizer) {
-        
         var translation = bubble.translationInView(view!)
         var location = bubble.locationInView(view!)
         
@@ -85,7 +82,7 @@
         taskBubble.xScale = 1.0
         taskBubble.yScale = 1.0
         taskBubble.position = CGPoint(x: location.x, y: location.y - 100)
-        // due to gravity, sprite automatically falls to bottom of screen
+
     }
     
     func updateTaskBubbleLabel(label: String) {
