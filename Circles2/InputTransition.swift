@@ -97,7 +97,7 @@ class InputTransition: BaseTransition {
             var size = CGSize(width: inputViewController.inputBubbleView.frame.width, height:inputViewController.inputBubbleView.frame.width)
             var string = inputViewController.inputField.text
             var location = inputViewController.inputBubbleView.center
-            self.homeViewController.bubbleScene.addBubble(size: size, string: string, location: location)
+            self.homeViewController.bubbleScene.addTaskBubble(size: size, string: string, location: location)
             
             
             UIView.animateWithDuration(0.02, animations: { () -> Void in

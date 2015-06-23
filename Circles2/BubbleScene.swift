@@ -12,60 +12,43 @@
     
     var myLabel:SKLabelNode!
     var initialCenter: CGPoint!
-    var sprite: SKSpriteNode!
+    var taskBubble: SKSpriteNode!
     var panRecognizer: UIPanGestureRecognizer!
     var doubleTapRecognizer: UITapGestureRecognizer!
     var touchedNode: SKNode!
+    var i : Int = 0
     
     override func didMoveToView(view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
-        
-        panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("move:"))
-        view.addGestureRecognizer(panRecognizer)
-        
-        doubleTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("didDoubleTap:"))
-        doubleTapRecognizer.numberOfTapsRequired = 2
-        view.addGestureRecognizer(doubleTapRecognizer)
+        setPanRecognizer()
+        setDoubleTapRecognizer()
     }
-
-    var i : Int = 0
+    
     // this function takes size/string/location parameters passed in the InputTransition
     // and adds a new sprite to the Scene based on those parameters
-    func addBubble(#size: CGSize, #string: String, #location: CGPoint) {
-        
-        // set a sprite with the image named "circle"
-        sprite = SKSpriteNode(imageNamed: "circle")
-        // set the sprite's size to the "size" parameter passed in InputTransition
-        sprite.size = CGSize(width: size.width, height: size.height)
-        sprite.xScale = 1.0
-        sprite.yScale = 1.0
-        sprite.position = location
-        // due to gravity, sprite automatically falls to bottom of screen
-        
-        // create a label that will take the "string" parameter passed in InputTransition
-        myLabel = SKLabelNode(fontNamed: "Helvetica Neue")
-        myLabel.fontColor = UIColor.whiteColor()
-        myLabel.text = string
-        myLabel.fontSize = 17
-        
+    func addTaskBubble(#size: CGSize, #string: String, #location: CGPoint) {
+        taskBubble = SKSpriteNode(imageNamed: "circle")
+        addTaskBubbleToScene(size, location: location)
+        updateTaskBubbleLabel(string)
+
         // this is where we can make the sprite do cool things
         var action = SKAction.scaleTo(0.8, duration: 0.6)
-        sprite.runAction(SKAction.repeatActionForever(action))
-        sprite.physicsBody?.mass = 0
+        taskBubble.runAction(SKAction.repeatActionForever(action))
+        taskBubble.physicsBody?.mass = 0
         
         // specifying that the sprite is a circle that reacts with other sprites
         // with some physics
-        sprite.physicsBody = SKPhysicsBody(circleOfRadius:sprite.size.width/2)
-        sprite.physicsBody!.dynamic = true
-        sprite.userInteractionEnabled = true
+        taskBubble.physicsBody = SKPhysicsBody(circleOfRadius: taskBubble.size.width/2)
+        taskBubble.physicsBody!.dynamic = true
+        taskBubble.userInteractionEnabled = true
         
         // name tasks "task" + incrementally increasing number
-        sprite.name = "task \(i)"
+        taskBubble.name = "task \(i)"
         i++
         
         // add sprite to view & then add string to the sprite
-        sprite.addChild(myLabel)
-        self.addChild(sprite)
+        taskBubble.addChild(myLabel)
+        self.addChild(taskBubble)
     }
     
     func move(bubble: UIPanGestureRecognizer) {
@@ -92,8 +75,53 @@
         }
     }
     
+    func addTaskBubbleToScene(size: CGSize, location: CGPoint) {
+        taskBubble.size = CGSize(width: size.width, height: size.height)
+        taskBubble.xScale = 1.0
+        taskBubble.yScale = 1.0
+        taskBubble.position = location
+        // due to gravity, sprite automatically falls to bottom of screen
+    }
+    
+    func updateTaskBubbleLabel(label: String) {
+        myLabel = SKLabelNode(fontNamed: "Helvetica Neue")
+        myLabel.fontColor = UIColor.whiteColor()
+        myLabel.text = label
+        myLabel.fontSize = 17
+    }
+
+    func setPanRecognizer() {
+        panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("move:"))
+        view!.addGestureRecognizer(panRecognizer)
+    }
+    
+    func setDoubleTapRecognizer() {
+        doubleTapRecognizer = UITapGestureRecognizer(target: self, action: Selector("didDoubleTap:"))
+        doubleTapRecognizer.numberOfTapsRequired = 2
+        view!.addGestureRecognizer(doubleTapRecognizer)
+    }
+    
     func didDoubleTap(bubble: UITapGestureRecognizer) {
-        println("Double Tapped")
+        findTaskBubble(bubble.locationInView(view!))
+        removeTaskBubble()
+    }
+    
+    func findTaskBubble(bubbleLocation: CGPoint) {
+        var location = bubbleLocation
+        location.y = self.view!.frame.size.height - location.y
+        var nodes = nodesAtPoint(location)
+        touchedNode = nodes.first as? SKNode
+    }
+    
+    func removeTaskBubble() {
+        let touchedSprite = self.touchedNode as! SKSpriteNode
+        var expand = SKAction.scaleTo(1.05, duration: 0.05)
+        var shrinkSlow = SKAction.scaleTo(0.5, duration: 0.10)
+        var shrinkFast = SKAction.scaleTo(0.0, duration: 0.05)
+        let sequence = SKAction.sequence([expand, shrinkSlow, shrinkFast])
+        touchedSprite.runAction(sequence, completion: {
+            touchedSprite.removeFromParent()
+        })
     }
 }
  
