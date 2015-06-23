@@ -30,9 +30,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tabView: UIVisualEffectView!
     var bubbleScene: BubbleScene!
     var inputTransition: InputTransition!
+    var longPressRecognizer: UILongPressGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        longPressRecognizer = UILongPressGestureRecognizer(target: self, action: Selector("didLongPressAddTask:"))
+
+        addTaskView.addGestureRecognizer(longPressRecognizer)
+        longPressRecognizer.minimumPressDuration = 0.02
+        longPressRecognizer.allowableMovement = 5
         addBubbleToHomeView()
     }
 
@@ -68,6 +74,29 @@ class HomeViewController: UIViewController {
         return true
     }
 
+    func didLongPressAddTask(sender: UILongPressGestureRecognizer) {
+       
+        if sender.state == UIGestureRecognizerState.Began {
+        
+            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                self.addTaskView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                }, completion: nil)
+            
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            
+            UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                self.addTaskView.transform = CGAffineTransformMakeScale(1, 1)
+            }, completion: nil)
+            
+            performSegueWithIdentifier("newTaskSegue", sender: nil)
+
+
+        }
+
+        
+    }
+
+
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
@@ -77,6 +106,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func didPressNewTaskButton(sender: AnyObject) {
+        
         performSegueWithIdentifier("newTaskSegue", sender: nil)
     }
 }
