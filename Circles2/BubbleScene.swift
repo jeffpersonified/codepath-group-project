@@ -107,8 +107,9 @@
     func updateTaskBubbleLabel(label: String) {
         taskBubbleLabel = SKLabelNode(fontNamed: "Helvetica Neue")
         taskBubbleLabel.fontColor = UIColor(red: 220/255, green: 181/255, blue: 110/255, alpha: 1)
+        taskBubbleLabel.position.y -= 10
         taskBubbleLabel.text = label
-        taskBubbleLabel.fontSize = 17
+        taskBubbleLabel.fontSize = 20
     }
 
     func setPanRecognizer() {

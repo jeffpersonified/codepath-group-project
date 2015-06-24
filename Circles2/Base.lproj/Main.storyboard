@@ -93,25 +93,14 @@
                                 </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter todo item" textAlignment="center" minimumFontSize="17" id="sag-hk-SsC">
-                                <rect key="frame" x="75" y="138" width="164" height="30"/>
+                                <rect key="frame" x="75" y="131" width="164" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.86274509803921573" green="0.70980392156862748" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KxR-Ju-Utc">
-                                <rect key="frame" x="47" y="263" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="cancel">
-                                    <color key="titleColor" red="0.40000000000000002" green="0.41999999999999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapCancel:" destination="DLc-J4-H5k" eventType="touchUpInside" id="SkG-g2-Gwy"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1eY-K3-uga">
-                                <rect key="frame" x="227" y="259" width="54" height="44"/>
+                                <rect key="frame" x="233" y="255" width="54" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="check">
                                     <color key="titleColor" red="0.40000000000000002" green="0.41999999999999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -119,6 +108,17 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapDone:" destination="DLc-J4-H5k" eventType="touchUpInside" id="8ka-Vg-S5W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KxR-Ju-Utc">
+                                <rect key="frame" x="35" y="259" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="cancel">
+                                    <color key="titleColor" red="0.40000000000000002" green="0.41999999999999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapCancel:" destination="DLc-J4-H5k" eventType="touchUpInside" id="SkG-g2-Gwy"/>
                                 </connections>
                             </button>
                         </subviews>
