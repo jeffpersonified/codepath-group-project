@@ -22,6 +22,8 @@
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         setPanRecognizer()
         setDoubleTapRecognizer()
+
+        
     }
     
     func addTaskBubble(#size: CGSize, #string: String, #location: CGPoint) {

@@ -27,7 +27,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dividerView: UIImageView!
     @IBOutlet weak var bubbleView: SKView!
     @IBOutlet weak var addTaskView: UIView!
-    @IBOutlet weak var tabView: UIVisualEffectView!
+    @IBOutlet weak var tabView: UIView!
+    
+    
     var bubbleScene: BubbleScene!
     var inputTransition: InputTransition!
     var longPressRecognizer: UILongPressGestureRecognizer!
@@ -40,6 +42,8 @@ class HomeViewController: UIViewController {
         longPressRecognizer.minimumPressDuration = 0.02
         longPressRecognizer.allowableMovement = 5
         addBubbleToHomeView()
+        bubbleScene.backgroundColor = UIColor(red: 250/255, green: 212/255, blue: 141/255, alpha: 1)
+
     }
 
     func addBubbleToHomeView() {
@@ -49,9 +53,9 @@ class HomeViewController: UIViewController {
             let screenSize  = CGSizeMake(bubbleView.frame.width, bubbleView.frame.height)
             
             scene.size = screenSize
-            skView.showsNodeCount = true
             skView.ignoresSiblingOrder = true
             skView.presentScene(scene)
+
         }
     }
 

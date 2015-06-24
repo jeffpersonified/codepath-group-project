@@ -27,8 +27,7 @@ class InputViewController: UIViewController {
         
         // programmatically set color and string of placeholder text
         self.inputField.attributedPlaceholder = NSAttributedString(string:"Enter new todo item",
-            attributes:[NSForegroundColorAttributeName: UIColor.whiteColor().colorWithAlphaComponent((0.6))])
-        
+            attributes:[NSForegroundColorAttributeName: UIColor(red: 250/255, green: 212/255, blue: 147/255, alpha: 0.6)])
     }
     
     override func viewDidAppear(animated: Bool) {

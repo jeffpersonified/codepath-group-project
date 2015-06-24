@@ -31,7 +31,7 @@ class InputTransition: BaseTransition {
                 UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 15, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                     
                     var scale = CGAffineTransformMakeScale(3.7, 3.7)
-                    var translation = CGAffineTransformMakeTranslation(0, -380)
+                    var translation = CGAffineTransformMakeTranslation(0, -390)
                     
                     self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
                     
