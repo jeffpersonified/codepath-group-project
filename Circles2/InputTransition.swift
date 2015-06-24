@@ -31,7 +31,7 @@ class InputTransition: BaseTransition {
                 UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 15, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                     
                     var scale = CGAffineTransformMakeScale(3.7, 3.7)
-                    var translation = CGAffineTransformMakeTranslation(0, -390)
+                    var translation = CGAffineTransformMakeTranslation(0, -384)
                     
                     self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
                     
@@ -92,7 +92,6 @@ class InputTransition: BaseTransition {
             
             self.homeViewController.addTaskView.transform = CGAffineTransformMakeTranslation(0, 80)
             self.homeViewController.tabView.transform = CGAffineTransformMakeTranslation(0, 80)
-            self.homeViewController.dividerView.transform = CGAffineTransformMakeTranslation(0, 80)
 
             // size, string & location are passed to the addBubble() function
             // to display the sprite with the proper string and dimensions in the Scene
@@ -113,7 +112,6 @@ class InputTransition: BaseTransition {
                         
                         self.homeViewController.bubbleScene.addTaskBubble(size: size, string: string, location: location)
 
-                        self.homeViewController.dividerView.transform = CGAffineTransformMakeTranslation(0, 0)
                         self.homeViewController.addTaskView.transform = CGAffineTransformMakeTranslation(0, 0)
                         self.homeViewController.tabView.transform = CGAffineTransformMakeTranslation(0, 0)
                         

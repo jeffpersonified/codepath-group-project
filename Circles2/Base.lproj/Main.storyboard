@@ -13,53 +13,43 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view autoresizesSubviews="NO" contentMode="scaleAspectFit" id="lKU-aZ-HfB" customClass="SKView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="567"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="center" id="B5y-lQ-rRb">
-                                        <rect key="frame" x="0.0" y="488" width="320" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" id="ItE-HC-NKd">
-                                                <rect key="frame" x="128" y="-25" width="64" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="circle" id="aTl-ob-UPB">
-                                                        <rect key="frame" x="1" y="33" width="63" height="66"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <gestureRecognizers/>
-                                                    </imageView>
-                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="plus" id="mbs-B8-JBt">
-                                                        <rect key="frame" x="20" y="54" width="24" height="24"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cub-gC-uxg">
-                                                        <rect key="frame" x="-18" y="20" width="100" height="80"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        <state key="normal">
-                                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="didPressNewTaskButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="nbN-v3-JnH"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.97999999999999998" green="0.82907999999999993" blue="0.54880000000000007" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <gestureRecognizers/>
-                                    </view>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="button-bg" id="49V-kG-qeI">
+                                        <rect key="frame" x="118" y="468" width="85" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.83137254901960789" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1Sp-Dz-wDg">
-                                <rect key="frame" x="-4" y="284" width="328" height="0.0"/>
+                            <view contentMode="scaleToFill" id="ItE-HC-NKd">
+                                <rect key="frame" x="128" y="478" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87" green="0.87" blue="0.87" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="circle" id="aTl-ob-UPB">
+                                        <rect key="frame" x="1" y="-1" width="63" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="plus" id="mbs-B8-JBt">
+                                        <rect key="frame" x="20" y="20" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cub-gC-uxg">
+                                        <rect key="frame" x="-18" y="-14" width="100" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <state key="normal">
+                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressNewTaskButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="nbN-v3-JnH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                         </subviews>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -67,8 +57,7 @@
                     <connections>
                         <outlet property="addTaskView" destination="ItE-HC-NKd" id="LkP-Uk-u9g"/>
                         <outlet property="bubbleView" destination="lKU-aZ-HfB" id="LpL-jY-r05"/>
-                        <outlet property="dividerView" destination="1Sp-Dz-wDg" id="kGH-oB-Dj0"/>
-                        <outlet property="tabView" destination="B5y-lQ-rRb" id="XAP-Fp-1lq"/>
+                        <outlet property="tabView" destination="49V-kG-qeI" id="gUK-hl-Bd4"/>
                         <segue destination="DLc-J4-H5k" kind="custom" identifier="newTaskSegue" id="SvP-A9-Ran"/>
                     </connections>
                 </viewController>
@@ -85,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="blob1" id="iG8-av-cN4">
-                                <rect key="frame" x="126" y="492" width="68" height="71"/>
+                                <rect key="frame" x="129" y="478" width="63" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -108,13 +97,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter todo item" textAlignment="center" minimumFontSize="17" id="sag-hk-SsC">
-                                <rect key="frame" x="75" y="131" width="164" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.86274509803921573" green="0.70980392156862748" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y5Q-yF-S4O">
                                 <rect key="frame" x="198" y="245" width="122" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -135,6 +117,13 @@
                                     <action selector="didTapCancel:" destination="DLc-J4-H5k" eventType="touchUpInside" id="RFI-qg-oBM"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter todo item" textAlignment="center" minimumFontSize="17" id="sag-hk-SsC">
+                                <rect key="frame" x="75" y="126" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.86274509803921573" green="0.70980392156862748" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215800000001" green="0.83137255909999996" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -216,7 +205,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blob1" width="224" height="224"/>
+        <image name="blob1" width="213" height="211"/>
+        <image name="button-bg" width="206" height="206"/>
         <image name="cancel" width="80" height="80"/>
         <image name="check" width="100" height="80"/>
         <image name="circle" width="210" height="210"/>

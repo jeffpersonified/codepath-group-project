@@ -24,7 +24,6 @@ extension SKNode {
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var dividerView: UIImageView!
     @IBOutlet weak var bubbleView: SKView!
     @IBOutlet weak var addTaskView: UIView!
     @IBOutlet weak var tabView: UIView!
