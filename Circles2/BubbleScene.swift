@@ -16,25 +16,42 @@
     var panRecognizer: UIPanGestureRecognizer!
     var doubleTapRecognizer: UITapGestureRecognizer!
     var touchedNode: SKNode!
+    var bubbleTexture: SKTexture!
     var i: Int = 0
     
     override func didMoveToView(view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         setPanRecognizer()
         setDoubleTapRecognizer()
-
+        bubbleTexture = SKTexture(imageNamed: "blob1")
         
     }
     
     func addTaskBubble(#size: CGSize, #string: String, #location: CGPoint) {
-        taskBubble = SKSpriteNode(imageNamed: "circle")
+
+        
+        var blob1: SKTexture = SKTexture(imageNamed: "blob1")
+        var blob2: SKTexture = SKTexture(imageNamed: "blob2")
+        var blob3: SKTexture = SKTexture(imageNamed: "blob1")
+
+        
+        
+        let scaleUp = SKAction.scaleTo(1.02, duration: 4)
+        let scale = SKAction.scaleTo(1, duration: 2)
+        let scaleDown = SKAction.scaleTo(0.98, duration: 4)
+        let fade = SKAction.fadeAlphaBy(0.4, duration: 0.8)
+        let morph = SKAction.sequence([scaleDown, scale, scaleUp])
+        let repeatMorph = SKAction.repeatActionForever(morph)
+        
+        taskBubble = SKSpriteNode(texture: bubbleTexture)
+
         addTaskBubbleToScene(size, location: location)
         updateTaskBubbleLabel(string)
+        
 
         // this is where we can make the sprite do cool things
-        var action = SKAction.scaleTo(1.0, duration: 0.6)
-        taskBubble.runAction(SKAction.repeatActionForever(action))
-        taskBubble.physicsBody?.mass = -10
+        taskBubble.runAction(repeatMorph)
+//        taskBubble.physicsBody?.mass = -10
         
         // specifying that the sprite is a circle that reacts with other sprites
         // with some physics
