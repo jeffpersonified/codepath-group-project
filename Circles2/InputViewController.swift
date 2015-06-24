@@ -13,6 +13,7 @@ class InputViewController: UIViewController {
     var bubbleScene: BubbleScene!
     var inputTransition: InputTransition!
     
+    @IBOutlet var inputBackgroundView: UIView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var inputBubbleView: UIImageView!
@@ -22,6 +23,8 @@ class InputViewController: UIViewController {
         super.viewDidLoad()
         
         // setting initial scale & alpha values to transition in InputTransition
+        
+        inputBackgroundView.backgroundColor = UIColor(red: 250/255, green: 212/255, blue: 141/255, alpha: 1)
         inputBubbleView.transform = CGAffineTransformMakeScale(1, 1)
         self.inputField.alpha = 0
         
