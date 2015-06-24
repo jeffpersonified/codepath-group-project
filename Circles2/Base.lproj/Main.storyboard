@@ -20,27 +20,33 @@
                                         <rect key="frame" x="0.0" y="488" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="circle" id="aTl-ob-UPB">
-                                                <rect key="frame" x="129" y="8" width="63" height="66"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <gestureRecognizers/>
-                                            </imageView>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="plus" id="mbs-B8-JBt">
-                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cub-gC-uxg">
-                                                <rect key="frame" x="110" y="-5" width="100" height="80"/>
+                                            <view contentMode="scaleToFill" id="ItE-HC-NKd">
+                                                <rect key="frame" x="90" y="-25" width="140" height="120"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didPressNewTaskButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="nbN-v3-JnH"/>
-                                                </connections>
-                                            </button>
+                                                <subviews>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="circle" id="aTl-ob-UPB">
+                                                        <rect key="frame" x="39" y="33" width="63" height="66"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <gestureRecognizers/>
+                                                    </imageView>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="plus" id="mbs-B8-JBt">
+                                                        <rect key="frame" x="58" y="54" width="24" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cub-gC-uxg">
+                                                        <rect key="frame" x="20" y="20" width="100" height="80"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="didPressNewTaskButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="nbN-v3-JnH"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97999999999999998" green="0.82907999999999993" blue="0.54880000000000007" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,7 +65,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="addTaskView" destination="B5y-lQ-rRb" id="h6Q-ce-Gcz"/>
+                        <outlet property="addTaskView" destination="ItE-HC-NKd" id="LkP-Uk-u9g"/>
                         <outlet property="bubbleView" destination="lKU-aZ-HfB" id="LpL-jY-r05"/>
                         <outlet property="dividerView" destination="1Sp-Dz-wDg" id="kGH-oB-Dj0"/>
                         <outlet property="tabView" destination="B5y-lQ-rRb" id="XAP-Fp-1lq"/>
