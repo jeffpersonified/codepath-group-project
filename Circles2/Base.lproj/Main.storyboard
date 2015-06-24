@@ -1,62 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="AmZ-vk-h6J">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
-        <scene sceneID="NAU-Nm-swO">
-            <objects>
-                <viewController id="dYV-e7-dy7" customClass="LoginViewController" customModule="Circles2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TiX-S8-7Vy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SbF-Yh-6Pf">
-                                <rect key="frame" x="16" y="250" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressSignUpButton:" destination="dYV-e7-dy7" eventType="touchUpInside" id="UDr-Vz-gBb"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" id="kJX-F1-BLw">
-                                <rect key="frame" x="16" y="174" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="lcq-b4-z8e">
-                                <rect key="frame" x="16" y="212" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xyo-Gg-zuG">
-                                <rect key="frame" x="261" y="250" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressLoginButton:" destination="dYV-e7-dy7" eventType="touchUpInside" id="Tuz-Zm-CVk"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="passwordField" destination="lcq-b4-z8e" id="Ivr-2e-ZOT"/>
-                        <outlet property="usernameField" destination="kJX-F1-BLw" id="WTB-oA-tvz"/>
-                        <segue destination="LVB-YS-i5n" kind="modal" identifier="OpenSesame" modalTransitionStyle="crossDissolve" id="EQF-bq-9Ie"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V8V-TB-9nr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-572" y="458"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
@@ -69,58 +16,53 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="567"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1Sp-Dz-wDg">
-                                        <rect key="frame" x="0.0" y="492" width="328" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.91081053018569946" green="0.91078323125839233" blue="0.91079866886138916" alpha="1" colorSpace="calibratedRGB"/>
-                                    </imageView>
+                                    <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="center" id="B5y-lQ-rRb">
+                                        <rect key="frame" x="0.0" y="488" width="320" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="circle" id="aTl-ob-UPB">
+                                                <rect key="frame" x="129" y="8" width="63" height="66"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <gestureRecognizers/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="plus" id="mbs-B8-JBt">
+                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cub-gC-uxg">
+                                                <rect key="frame" x="110" y="-5" width="100" height="80"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didPressNewTaskButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="nbN-v3-JnH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.97999999999999998" green="0.82907999999999993" blue="0.54880000000000007" alpha="0.90000000000000002" colorSpace="deviceRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.83137254901960789" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" id="QrT-ad-AVP">
-                                <rect key="frame" x="0.0" y="493" width="320" height="77"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fKZ-41-8vJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="circle" id="9dL-Xb-dmR">
-                                            <rect key="frame" x="129" y="3" width="63" height="66"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <gestureRecognizers/>
-                                        </imageView>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="plus" id="gOw-7V-KLQ">
-                                            <rect key="frame" x="148" y="24" width="24" height="24"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="STW-7M-9AF">
-                                            <rect key="frame" x="133" y="12" width="55" height="53"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <state key="normal">
-                                                <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="didPressNewTaskButton:" destination="LVB-YS-i5n" eventType="touchUpInside" id="1Ou-8P-VYq"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <gestureRecognizers/>
-                                </view>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1Sp-Dz-wDg">
+                                <rect key="frame" x="-4" y="284" width="328" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87" green="0.87" blue="0.87" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="addTaskView" destination="fKZ-41-8vJ" id="bT8-3T-EXS"/>
+                        <outlet property="addTaskView" destination="B5y-lQ-rRb" id="h6Q-ce-Gcz"/>
                         <outlet property="bubbleView" destination="lKU-aZ-HfB" id="LpL-jY-r05"/>
                         <outlet property="dividerView" destination="1Sp-Dz-wDg" id="kGH-oB-Dj0"/>
-                        <outlet property="tabView" destination="QrT-ad-AVP" id="ulX-ME-QLT"/>
+                        <outlet property="tabView" destination="B5y-lQ-rRb" id="XAP-Fp-1lq"/>
                         <segue destination="DLc-J4-H5k" kind="custom" identifier="newTaskSegue" id="SvP-A9-Ran"/>
                     </connections>
                 </viewController>
@@ -145,17 +87,16 @@
                                 </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter todo item" textAlignment="center" minimumFontSize="17" id="sag-hk-SsC">
-                                <rect key="frame" x="75" y="143" width="164" height="30"/>
+                                <rect key="frame" x="75" y="138" width="164" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.86274509803921573" green="0.70980392156862748" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KxR-Ju-Utc">
-                                <rect key="frame" x="24" y="271" width="58" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KxR-Ju-Utc">
+                                <rect key="frame" x="47" y="263" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" image="cancel">
                                     <color key="titleColor" red="0.40000000000000002" green="0.41999999999999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -163,10 +104,10 @@
                                     <action selector="didTapCancel:" destination="DLc-J4-H5k" eventType="touchUpInside" id="SkG-g2-Gwy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1eY-K3-uga">
-                                <rect key="frame" x="256" y="271" width="37" height="30"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1eY-K3-uga">
+                                <rect key="frame" x="227" y="259" width="54" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done">
+                                <state key="normal" image="check">
                                     <color key="titleColor" red="0.40000000000000002" green="0.41999999999999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -175,11 +116,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98039215800000001" green="0.83137255909999996" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="KxR-Ju-Utc" id="eam-Zf-7B5"/>
                         <outlet property="doneButton" destination="1eY-K3-uga" id="TWy-NN-e2D"/>
+                        <outlet property="inputBackgroundView" destination="FeJ-mC-igW" id="70g-x6-bO2"/>
                         <outlet property="inputBubbleView" destination="iG8-av-cN4" id="tEU-wf-gCq"/>
                         <outlet property="inputField" destination="sag-hk-SsC" id="0Wp-Ta-1r8"/>
                     </connections>
@@ -193,10 +135,71 @@
             </objects>
             <point key="canvasLocation" x="437" y="458"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="sJk-lb-vHw">
+            <objects>
+                <viewController id="AmZ-vk-h6J" customClass="LoginViewController" customModule="Circles2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ezd-mh-v6g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mha-Ar-ksV">
+                                <rect key="frame" x="20" y="194" width="147" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressSignUpButton:" destination="AmZ-vk-h6J" eventType="touchUpInside" id="3Tq-01-9Zi"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" id="zbx-Os-8yR">
+                                <rect key="frame" x="20" y="73" width="284" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="QhI-J5-cb7">
+                                <rect key="frame" x="20" y="127" width="284" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YeY-x0-x2Z">
+                                <rect key="frame" x="20" y="252" width="116" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="40"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLoginButton:" destination="AmZ-vk-h6J" eventType="touchUpInside" id="ir5-Fl-OTF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.83137254900000002" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordField" destination="QhI-J5-cb7" id="rw7-2L-U4l"/>
+                        <outlet property="usernameField" destination="zbx-Os-8yR" id="2Ab-YX-5Mv"/>
+                        <segue destination="LVB-YS-i5n" kind="modal" identifier="OpenSesame" modalTransitionStyle="crossDissolve" id="1s6-Bx-BDf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLB-Re-nul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-502" y="458"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cancel" width="80" height="80"/>
+        <image name="check" width="100" height="80"/>
         <image name="circle" width="210" height="210"/>
-        <image name="plus" width="42" height="42"/>
+        <image name="plus" width="98" height="98"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

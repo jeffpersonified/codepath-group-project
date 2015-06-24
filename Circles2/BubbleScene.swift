@@ -22,6 +22,8 @@
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         setPanRecognizer()
         setDoubleTapRecognizer()
+
+        
     }
     
     func addTaskBubble(#size: CGSize, #string: String, #location: CGPoint) {
@@ -87,7 +89,7 @@
     
     func updateTaskBubbleLabel(label: String) {
         taskBubbleLabel = SKLabelNode(fontNamed: "Helvetica Neue")
-        taskBubbleLabel.fontColor = UIColor.whiteColor()
+        taskBubbleLabel.fontColor = UIColor(red: 220/255, green: 181/255, blue: 110/255, alpha: 1)
         taskBubbleLabel.text = label
         taskBubbleLabel.fontSize = 17
     }
