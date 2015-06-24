@@ -31,7 +31,7 @@ class InputTransition: BaseTransition {
                 UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 1.2, initialSpringVelocity: 15, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                     
                     var scale = CGAffineTransformMakeScale(3.7, 3.7)
-                    var translation = CGAffineTransformMakeTranslation(0, -384)
+                    var translation = CGAffineTransformMakeTranslation(0, -380)
                     
                     self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
                     
@@ -67,8 +67,6 @@ class InputTransition: BaseTransition {
                 self.inputViewController.doneButton.alpha = 0
                 self.inputViewController.inputField.alpha = 0
                 self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
-
-                
                 
                 
                 }, completion: { (Bool) -> Void in
@@ -100,23 +98,25 @@ class InputTransition: BaseTransition {
             var location = inputViewController.inputBubbleView.center 
 
             
-            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            UIView.animateWithDuration(0.24, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 self.inputViewController.cancelButton.alpha = 0
                 self.inputViewController.doneButton.alpha = 0
-                containerView.alpha = 0
+                self.homeViewController.bubbleScene.addTaskBubble(size: size, string: string, location: location)
 
 
             }, completion: { (Bool) -> Void in
                     
-                    UIView.animateWithDuration(0.24, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                        
-                        self.homeViewController.bubbleScene.addTaskBubble(size: size, string: string, location: location)
-
-                        self.homeViewController.addTaskView.transform = CGAffineTransformMakeTranslation(0, 0)
-                        self.homeViewController.tabView.transform = CGAffineTransformMakeTranslation(0, 0)
+                    UIView.animateWithDuration(0, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                        containerView.alpha = 0
                         
                     }, completion: { (Bool) -> Void in
                         
+                        UIView.animateWithDuration(0.24, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                        
+                        self.homeViewController.addTaskView.transform = CGAffineTransformMakeTranslation(0, 0)
+                        self.homeViewController.tabView.transform = CGAffineTransformMakeTranslation(0, 0)
+                            }, completion: nil) 
+
                         self.finish()
 
                     })

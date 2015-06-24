@@ -46,6 +46,17 @@ class InputViewController: UIViewController {
     
     // sets up Parse tracking when task is saved
     @IBAction func didTapDone(sender: AnyObject) {
+        
+        UIView.animateWithDuration(0.1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 30, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.doneButton.transform = CGAffineTransformMakeScale(0.8, 0.8)
+
+        }) { (Bool) -> Void in
+            
+            UIView.animateWithDuration(0.1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 30, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                self.doneButton.transform = CGAffineTransformMakeScale(1, 1)
+                }, completion: nil)
+        }
+        
         let task = PFObject(className: "Task")
         let user = PFUser.currentUser()!
         task["content"] = inputField.text
@@ -66,6 +77,18 @@ class InputViewController: UIViewController {
     // setting alpha of button as a hack to trigger correct transition based on button alpha
     @IBAction func didTapCancel(sender: UIButton) {
         cancelButton.alpha = 0.5
+        
+        
+        UIView.animateWithDuration(0.1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 30, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.cancelButton.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            
+            }) { (Bool) -> Void in
+                
+                UIView.animateWithDuration(0.1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 30, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                    self.cancelButton.transform = CGAffineTransformMakeScale(1, 1)
+                    }, completion: nil)
+        }
+        
         dismissViewControllerAnimated(true, completion: nil)
         
     }

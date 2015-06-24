@@ -11,7 +11,7 @@ extension SKNode {
         if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
             var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
             var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
-
+            
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
             let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! BubbleScene
             archiver.finishDecoding()
@@ -36,15 +36,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         longPressRecognizer = UILongPressGestureRecognizer(target: self, action: Selector("didLongPressAddTask:"))
-
+        
         addTaskView.addGestureRecognizer(longPressRecognizer)
         longPressRecognizer.minimumPressDuration = 0.02
         longPressRecognizer.allowableMovement = 5
         addBubbleToHomeView()
         bubbleScene.backgroundColor = UIColor(red: 250/255, green: 212/255, blue: 141/255, alpha: 1)
-
+        
     }
-
+    
     func addBubbleToHomeView() {
         if let scene = BubbleScene.unarchiveFromFile("BubbleScene") as? BubbleScene {
             self.bubbleScene = scene
@@ -54,10 +54,10 @@ class HomeViewController: UIViewController {
             scene.size = screenSize
             skView.ignoresSiblingOrder = true
             skView.presentScene(scene)
-
+            
         }
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationViewController = segue.destinationViewController as! InputViewController
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
@@ -76,11 +76,11 @@ class HomeViewController: UIViewController {
     override func shouldAutorotate() -> Bool {
         return true
     }
-
+    
     func didLongPressAddTask(sender: UILongPressGestureRecognizer) {
-       
-        if sender.state == UIGestureRecognizerState.Began {
         
+        if sender.state == UIGestureRecognizerState.Began {
+            
             UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 self.addTaskView.transform = CGAffineTransformMakeScale(0.8, 0.8)
                 }, completion: nil)
@@ -89,17 +89,17 @@ class HomeViewController: UIViewController {
             
             UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 self.addTaskView.transform = CGAffineTransformMakeScale(1, 1)
-            }, completion: nil)
+                }, completion: nil)
             
             performSegueWithIdentifier("newTaskSegue", sender: nil)
-
-
+            
+            
         }
-
+        
         
     }
-
-
+    
+    
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
