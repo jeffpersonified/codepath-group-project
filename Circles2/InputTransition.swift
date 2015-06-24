@@ -65,6 +65,7 @@ class InputTransition: BaseTransition {
                 
                 self.inputViewController.cancelButton.alpha = 0
                 self.inputViewController.doneButton.alpha = 0
+                self.inputViewController.inputField.alpha = 0
                 self.inputViewController.inputBubbleView.transform = CGAffineTransformConcat(scale, translation)
 
                 

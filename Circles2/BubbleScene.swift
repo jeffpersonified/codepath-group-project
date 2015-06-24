@@ -28,30 +28,14 @@
     }
     
     func addTaskBubble(#size: CGSize, #string: String, #location: CGPoint) {
-
         
-        var blob1: SKTexture = SKTexture(imageNamed: "blob1")
-        var blob2: SKTexture = SKTexture(imageNamed: "blob2")
-        var blob3: SKTexture = SKTexture(imageNamed: "blob1")
-
-        
-        
-        let scaleUp = SKAction.scaleTo(1.02, duration: 4)
-        let scale = SKAction.scaleTo(1, duration: 2)
-        let scaleDown = SKAction.scaleTo(0.98, duration: 4)
-        let fade = SKAction.fadeAlphaBy(0.4, duration: 0.8)
-        let morph = SKAction.sequence([scaleDown, scale, scaleUp])
-        let repeatMorph = SKAction.repeatActionForever(morph)
         
         taskBubble = SKSpriteNode(texture: bubbleTexture)
-
         addTaskBubbleToScene(size, location: location)
         updateTaskBubbleLabel(string)
         
-
+        
         // this is where we can make the sprite do cool things
-        taskBubble.runAction(repeatMorph)
-//        taskBubble.physicsBody?.mass = -10
         
         // specifying that the sprite is a circle that reacts with other sprites
         // with some physics
@@ -59,9 +43,9 @@
         taskBubble.physicsBody!.dynamic = true
         taskBubble.userInteractionEnabled = true
         taskBubble.physicsBody!.allowsRotation = false
-        taskBubble.physicsBody?.restitution = 0.2
+        taskBubble.physicsBody?.restitution = 0.4
         taskBubble.physicsBody?.angularDamping = 0.8
-
+        
         
         // name tasks "task" + incrementally increasing number
         taskBubble.name = "task \(i)"
@@ -70,7 +54,85 @@
         // add sprite to view & then add string to the sprite
         taskBubble.addChild(taskBubbleLabel)
         self.addChild(taskBubble)
-
+        
+        
+        let shrink1 = SKAction.scaleTo(0.7, duration: 0.4)
+        let shrink2 = SKAction.scaleTo(0.6, duration: 0.4)
+        let shrink3 = SKAction.scaleTo(0.5, duration: 0.4)
+        
+        // set up morphing animation for first few bubbles
+        let scaleUp = SKAction.scaleTo(1.02, duration: 3)
+        let scale = SKAction.scaleTo(1, duration: 1)
+        let scaleDown = SKAction.scaleTo(0.98, duration: 3)
+        let morph = SKAction.sequence([scaleDown, scale, scaleUp])
+        let repeatMorph = SKAction.repeatActionForever(morph)
+        
+        var sprite1 = self.childNodeWithName("task 0")
+        var sprite2 = self.childNodeWithName("task 1")
+        var sprite3 = self.childNodeWithName("task 2")
+        var sprite4 = self.childNodeWithName("task 3")
+        var sprite5 = self.childNodeWithName("task 4")
+        var sprite6 = self.childNodeWithName("task 5")
+        var sprite7 = self.childNodeWithName("task 6")
+        var sprite8 = self.childNodeWithName("task 7")
+        var sprite9 = self.childNodeWithName("task 9")
+        
+        
+        if self.children.count >= 4 && self.children.count < 6{
+            
+            sprite1?.removeAllActions()
+            sprite2?.removeAllActions()
+            taskBubble.removeAllActions()
+            sprite1?.runAction(shrink1)
+            sprite2?.runAction(shrink1)
+            taskBubble.runAction(shrink1)
+            
+        } else if self.children.count >= 6 && self.children.count < 9 {
+            
+            sprite1?.removeAllActions()
+            sprite2?.removeAllActions()
+            sprite3?.removeAllActions()
+            sprite4?.removeAllActions()
+            sprite5?.removeAllActions()
+            sprite1?.runAction(shrink2)
+            sprite2?.runAction(shrink2)
+            sprite3?.runAction(shrink2)
+            sprite4?.runAction(shrink2)
+            sprite5?.runAction(shrink2)
+            taskBubble.runAction(shrink2)
+            
+            
+        } else if self.children.count >= 9 {
+            
+            sprite1?.removeAllActions()
+            sprite2?.removeAllActions()
+            sprite3?.removeAllActions()
+            sprite4?.removeAllActions()
+            sprite5?.removeAllActions()
+            sprite6?.removeAllActions()
+            sprite7?.removeAllActions()
+            sprite8?.removeAllActions()
+            sprite1?.runAction(shrink3)
+            sprite2?.runAction(shrink3)
+            sprite3?.runAction(shrink3)
+            sprite4?.runAction(shrink3)
+            sprite5?.runAction(shrink3)
+            sprite6?.runAction(shrink3)
+            sprite7?.runAction(shrink3)
+            sprite8?.runAction(shrink3)
+            sprite9?.runAction(shrink3)
+            taskBubble.runAction(shrink3)
+            
+            
+        } else if self.children.count < 4 {
+            
+            taskBubble.runAction(repeatMorph)
+            taskBubble = nil
+            
+        }
+        println("\(self.children.count)")
+        
+        
     }
     
     func move(bubble: UIPanGestureRecognizer) {
@@ -79,7 +141,7 @@
         
         // flip coordinate system so it has same coordinate system as typical ViewController
         location.y = self.view!.frame.size.height - location.y
-
+        
         if bubble.state == UIGestureRecognizerState.Began {
             // set nodes = to the node at the touched location
             var nodes = nodesAtPoint(location)
@@ -101,7 +163,7 @@
         taskBubble.xScale = 1.0
         taskBubble.yScale = 1.0
         taskBubble.position = CGPoint(x: location.x, y: location.y - 100)
-
+        
     }
     
     func updateTaskBubbleLabel(label: String) {
@@ -111,7 +173,7 @@
         taskBubbleLabel.text = label
         taskBubbleLabel.fontSize = 20
     }
-
+    
     func setPanRecognizer() {
         panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("move:"))
         view!.addGestureRecognizer(panRecognizer)
@@ -145,6 +207,6 @@
             touchedSprite.removeFromParent()
         })
     }
-}
+ }
  
-  
+   

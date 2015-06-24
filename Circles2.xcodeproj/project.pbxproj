@@ -11,6 +11,7 @@
 		6B1B37861B30E01300DBD6F2 /* InputTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B37851B30E01300DBD6F2 /* InputTransition.swift */; };
 		6B75FFD61B312C92000A6FEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B75FFD51B312C92000A6FEE /* LoginViewController.swift */; };
 		6B75FFDB1B326920000A6FEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B75FFD91B326920000A6FEE /* Main.storyboard */; };
+		6BB34DD61B3B36C700C93CD3 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB34DD51B3B36C700C93CD3 /* SKTAudio.swift */; };
 		6BBD96E61B2CA6A200A12635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */; };
 		6BBD96E81B2CA6A200A12635 /* BubbleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6BBD96E71B2CA6A200A12635 /* BubbleScene.sks */; };
 		6BBD96EA1B2CA6A200A12635 /* BubbleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD96E91B2CA6A200A12635 /* BubbleScene.swift */; };
@@ -39,6 +40,7 @@
 		6B1B37851B30E01300DBD6F2 /* InputTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputTransition.swift; path = Circles2/InputTransition.swift; sourceTree = "<group>"; };
 		6B75FFD51B312C92000A6FEE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Circles2/LoginViewController.swift; sourceTree = "<group>"; };
 		6B75FFDA1B326920000A6FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6BB34DD51B3B36C700C93CD3 /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SKTAudio.swift; path = ../SKTAudio.swift; sourceTree = "<group>"; };
 		6BBD96E01B2CA6A200A12635 /* Circles2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBD96E41B2CA6A200A12635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		6BBD96E21B2CA6A200A12635 /* Circles2 */ = {
 			isa = PBXGroup;
 			children = (
+				6BB34DD51B3B36C700C93CD3 /* SKTAudio.swift */,
 				6BBD96E51B2CA6A200A12635 /* AppDelegate.swift */,
 				6BBD970B1B2CAA2400A12635 /* Shader1.fsh */,
 				6BBD96E71B2CA6A200A12635 /* BubbleScene.sks */,
@@ -298,6 +301,7 @@
 				6B75FFD61B312C92000A6FEE /* LoginViewController.swift in Sources */,
 				6BBD96EA1B2CA6A200A12635 /* BubbleScene.swift in Sources */,
 				BB62F1551B3119E90024B890 /* BaseTransition.swift in Sources */,
+				6BB34DD61B3B36C700C93CD3 /* SKTAudio.swift in Sources */,
 				6B1B37861B30E01300DBD6F2 /* InputTransition.swift in Sources */,
 				BB62F1561B3119E90024B890 /* FadeTransition.swift in Sources */,
 				6B1B37841B30D82300DBD6F2 /* InputViewController.swift in Sources */,

@@ -21,20 +21,20 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="ItE-HC-NKd">
-                                                <rect key="frame" x="90" y="-25" width="140" height="120"/>
+                                                <rect key="frame" x="128" y="-25" width="64" height="120"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="circle" id="aTl-ob-UPB">
-                                                        <rect key="frame" x="39" y="33" width="63" height="66"/>
+                                                        <rect key="frame" x="1" y="33" width="63" height="66"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <gestureRecognizers/>
                                                     </imageView>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="plus" id="mbs-B8-JBt">
-                                                        <rect key="frame" x="58" y="54" width="24" height="24"/>
+                                                        <rect key="frame" x="20" y="54" width="24" height="24"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cub-gC-uxg">
-                                                        <rect key="frame" x="20" y="20" width="100" height="80"/>
+                                                        <rect key="frame" x="-18" y="20" width="100" height="80"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         <state key="normal">
@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="458"/>
+            <point key="canvasLocation" x="69" y="458"/>
         </scene>
         <!--Input View Controller-->
         <scene sceneID="4hH-PR-O2o">
@@ -85,20 +85,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="blob1" id="iG8-av-cN4">
-                                <rect key="frame" x="128" y="496" width="63" height="66"/>
+                                <rect key="frame" x="126" y="492" width="68" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="W5Z-RM-rSZ" appends="YES" id="B8z-ip-76b"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter todo item" textAlignment="center" minimumFontSize="17" id="sag-hk-SsC">
-                                <rect key="frame" x="75" y="131" width="164" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.86274509803921573" green="0.70980392156862748" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1eY-K3-uga">
                                 <rect key="frame" x="233" y="255" width="54" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -106,9 +99,6 @@
                                     <color key="titleColor" red="0.40000000000000002" green="0.41999999999999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="didTapDone:" destination="DLc-J4-H5k" eventType="touchUpInside" id="8ka-Vg-S5W"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KxR-Ju-Utc">
                                 <rect key="frame" x="35" y="259" width="40" height="40"/>
@@ -117,8 +107,32 @@
                                     <color key="titleColor" red="0.40000000000000002" green="0.41999999999999998" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter todo item" textAlignment="center" minimumFontSize="17" id="sag-hk-SsC">
+                                <rect key="frame" x="75" y="131" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.86274509803921573" green="0.70980392156862748" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y5Q-yF-S4O">
+                                <rect key="frame" x="198" y="245" width="122" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="didTapCancel:" destination="DLc-J4-H5k" eventType="touchUpInside" id="SkG-g2-Gwy"/>
+                                    <action selector="didTapDone:" destination="DLc-J4-H5k" eventType="touchUpInside" id="5Nm-4j-D4j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rM7-QB-HVU">
+                                <rect key="frame" x="0.0" y="247" width="122" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapCancel:" destination="DLc-J4-H5k" eventType="touchUpInside" id="RFI-qg-oBM"/>
                                 </connections>
                             </button>
                         </subviews>
