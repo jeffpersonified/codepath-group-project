@@ -58,6 +58,8 @@ class HomeViewController: UIViewController {
         }
     }
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationViewController = segue.destinationViewController as! InputViewController
         destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom

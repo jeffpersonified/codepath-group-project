@@ -7,6 +7,7 @@
  //
  
  import SpriteKit
+ import CoreMotion
  
  class BubbleScene: SKScene {
     
@@ -18,12 +19,17 @@
     var touchedNode: SKNode!
     var bubbleTexture: SKTexture!
     var i: Int = 0
+    var motionManager: CMMotionManager!
+
     
+
     override func didMoveToView(view: SKView) {
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         setPanRecognizer()
         setDoubleTapRecognizer()
         bubbleTexture = SKTexture(imageNamed: "blob1")
+        motionManager = CMMotionManager()
+        motionManager.startAccelerometerUpdates()
         
     }
     
@@ -207,6 +213,13 @@
             touchedSprite.removeFromParent()
         })
     }
+    
+    override func update(currentTime: CFTimeInterval) {
+            if let accelerometerData = motionManager.accelerometerData {
+                physicsWorld.gravity = CGVector(dx: accelerometerData.acceleration.x * 50, dy: accelerometerData.acceleration.y * 50)
+            }
+    }
+    
  }
  
    
